@@ -51,9 +51,13 @@ function get_search_box(){
 			<div class="per_con">
 				<?php if ($this->_var['info']['avatar'] != ''): ?><img src="<?php echo $this->_var['info']['avatar']; ?>"/><?php else: ?><img src="themes/tianxin100/images/photo.png"/><?php endif; ?>
 				<div class="name_right">
-					<p>会 员 ID :<?php echo $this->_var['info']['username']; ?></p><p>微信昵称：<?php echo $this->_var['info']['nickname']; ?></p><p>关注时间：<?php echo $this->_var['info']['subscribe_time']; ?></p>
+					<p>会 员 ID :<?php echo $this->_var['info']['user_id']; ?></p><p>微信昵称：<?php echo $this->_var['info']['nickname']; ?></p><p>关注时间：<?php echo $this->_var['info']['subscribe_time']; ?></p>
 				</div>
 			</div>
+			<!--
+            	作者：zdwroby@sina.com
+            	时间：2016-11-29
+            	描述：去掉资金红包信息
 			<div class="icon_list">
 				<ul>
 					<li><a href="user.php?act=order_list"><img src="themes/tianxin100/images/icon1.png" /><span>30天订单</span></a></li>
@@ -61,7 +65,9 @@ function get_search_box(){
 					<li><a href="distribute.php?act=account_detail"><img src="themes/tianxin100/images/icon3.png" /><span>余额<?php echo $this->_var['info']['surplus']; ?></span></a></li>
 					<li><a href="user.php?act=bonus"><img src="themes/tianxin100/images/icon4.png" /><span>红包</span></a></li>
 				</ul>
-			</div>
+			</div>            	
+            -->
+
 	</div>
 <div class="blank3"></div>
 <section class="wrap">

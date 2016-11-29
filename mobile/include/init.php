@@ -1,13 +1,13 @@
 <?php
 
 /**
- * ECSHOP Ç°Ì¨¹«ÓÃÎÄ¼ş
+ * ECSHOP å‰å°å…¬ç”¨æ–‡ä»¶
  * ============================================================================
- * * °æÈ¨ËùÓĞ 2005-2012 ÉÏº£ÉÌÅÉÍøÂç¿Æ¼¼ÓĞÏŞ¹«Ë¾£¬²¢±£ÁôËùÓĞÈ¨Àû¡£
- * ÍøÕ¾µØÖ·: http://www.ecshop.com£»
+ * * ç‰ˆæƒæ‰€æœ‰ 2005-2012 ä¸Šæµ·å•†æ´¾ç½‘ç»œç§‘æŠ€æœ‰é™å…¬å¸ï¼Œå¹¶ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚
+ * ç½‘ç«™åœ°å€: http://www.ecshop.comï¼›
  * ----------------------------------------------------------------------------
- * Õâ²»ÊÇÒ»¸ö×ÔÓÉÈí¼ş£¡ÄúÖ»ÄÜÔÚ²»ÓÃÓÚÉÌÒµÄ¿µÄµÄÇ°ÌáÏÂ¶Ô³ÌĞò´úÂë½øĞĞĞŞ¸ÄºÍ
- * Ê¹ÓÃ£»²»ÔÊĞí¶Ô³ÌĞò´úÂëÒÔÈÎºÎĞÎÊ½ÈÎºÎÄ¿µÄµÄÔÙ·¢²¼¡£
+ * è¿™ä¸æ˜¯ä¸€ä¸ªè‡ªç”±è½¯ä»¶ï¼æ‚¨åªèƒ½åœ¨ä¸ç”¨äºå•†ä¸šç›®çš„çš„å‰æä¸‹å¯¹ç¨‹åºä»£ç è¿›è¡Œä¿®æ”¹å’Œ
+ * ä½¿ç”¨ï¼›ä¸å…è®¸å¯¹ç¨‹åºä»£ç ä»¥ä»»ä½•å½¢å¼ä»»ä½•ç›®çš„çš„å†å‘å¸ƒã€‚
  * ============================================================================
  * $Author: liubo $
  * $Id: init.php 17217 2011-01-19 06:29:08Z liubo $
@@ -31,7 +31,7 @@ if (!file_exists(ROOT_PATH . 'data/install.lock') && !file_exists(ROOT_PATH . 'i
     exit;
 }
 
-/* ³õÊ¼»¯ÉèÖÃ */
+/* åˆå§‹åŒ–è®¾ç½® */
 @ini_set('memory_limit', '640M');
 @ini_set('session.cache_expire', 180);
 @ini_set('session.use_trans_sid', 0);
@@ -70,7 +70,7 @@ require(ROOT_PATH . 'include/lib_insert.php');
 require(ROOT_PATH . 'include/lib_goods.php');
 require(ROOT_PATH . 'include/lib_article.php');
 require(ROOT_PATH . 'include/cls_wechat.php');
-/* ¶ÔÓÃ»§´«ÈëµÄ±äÁ¿½øĞĞ×ªÒå²Ù×÷¡£ */
+/* å¯¹ç”¨æˆ·ä¼ å…¥çš„å˜é‡è¿›è¡Œè½¬ä¹‰æ“ä½œã€‚ */
 if (!get_magic_quotes_gpc()) {
     if (!empty($_GET)) {
         $_GET = addslashes_deep($_GET);
@@ -83,39 +83,39 @@ if (!get_magic_quotes_gpc()) {
     $_REQUEST = addslashes_deep($_REQUEST);
 }
 
-/* ´´½¨ ECSHOP ¶ÔÏó */
+/* åˆ›å»º ECSHOP å¯¹è±¡ */
 $ecs = new ECS($db_name, $prefix);
 define('DATA_DIR', $ecs->data_dir());
 define('IMAGE_DIR', $ecs->image_dir());
 
-/* ³õÊ¼»¯Êı¾İ¿âÀà */
+/* åˆå§‹åŒ–æ•°æ®åº“ç±» */
 require(ROOT_PATH . 'include/cls_mysql.php');
 $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name);
 $db->set_disable_cache_tables(array($ecs->table('sessions'), $ecs->table('sessions_data'), $ecs->table('cart')));
 $db_host = $db_user = $db_pass = $db_name = NULL;
 
-/* ´´½¨´íÎó´¦Àí¶ÔÏó */
+/* åˆ›å»ºé”™è¯¯å¤„ç†å¯¹è±¡ */
 $err = new ecs_error('message.dwt');
 
-/* ÔØÈëÏµÍ³²ÎÊı */
+/* è½½å…¥ç³»ç»Ÿå‚æ•° */
 $_CFG = load_config();
 $_CFG['URL_HTTP_HOST'] = $config['site_url'];
 
-/* ÔØÈëÓïÑÔÎÄ¼ş */
+/* è½½å…¥è¯­è¨€æ–‡ä»¶ */
 require(ROOT_PATH . 'lang/' . $_CFG['lang'] . '/common.php');
 
 if ($_CFG['shop_closed'] == 1) {
-    /* ÉÌµê¹Ø±ÕÁË£¬Êä³ö¹Ø±ÕµÄÏûÏ¢ */
+    /* å•†åº—å…³é—­äº†ï¼Œè¾“å‡ºå…³é—­çš„æ¶ˆæ¯ */
     header('Content-type: text/html; charset=' . EC_CHARSET);
 
     die('<div style="margin: 150px; text-align: center; font-size: 14px"><p>' . $_LANG['shop_closed'] . '</p><p>' . $_CFG['close_comment'] . '</p></div>');
 }
 
 if (is_spider()) {
-    /* Èç¹ûÊÇÖ©ÖëµÄ·ÃÎÊ£¬ÄÇÃ´Ä¬ÈÏÎª·Ã¿Í·½Ê½£¬²¢ÇÒ²»¼ÇÂ¼µ½ÈÕÖ¾ÖĞ */
+    /* å¦‚æœæ˜¯èœ˜è››çš„è®¿é—®ï¼Œé‚£ä¹ˆé»˜è®¤ä¸ºè®¿å®¢æ–¹å¼ï¼Œå¹¶ä¸”ä¸è®°å½•åˆ°æ—¥å¿—ä¸­ */
     if (!defined('INIT_NO_USERS')) {
         define('INIT_NO_USERS', true);
-        /* ÕûºÏUCºó£¬Èç¹ûÊÇÖ©Öë·ÃÎÊ£¬³õÊ¼»¯UCĞèÒªµÄ³£Á¿ */
+        /* æ•´åˆUCåï¼Œå¦‚æœæ˜¯èœ˜è››è®¿é—®ï¼Œåˆå§‹åŒ–UCéœ€è¦çš„å¸¸é‡ */
         if ($_CFG['integrate_code'] == 'ucenter') {
             $user = & init_users();
         }
@@ -129,7 +129,7 @@ if (is_spider()) {
 }
 
 if (!defined('INIT_NO_USERS')) {
-    /* ³õÊ¼»¯session */
+    /* åˆå§‹åŒ–session */
     include(ROOT_PATH . 'include/cls_session.php');
 
     $sess = new cls_session($db, $ecs->table('sessions'), $ecs->table('sessions_data'));
@@ -143,7 +143,7 @@ if (!defined('INIT_NO_SMARTY')) {
     header('Cache-control: private');
     header('Content-type: text/html; charset=' . EC_CHARSET);
 
-    /* ´´½¨ Smarty ¶ÔÏó¡£ */
+    /* åˆ›å»º Smarty å¯¹è±¡ã€‚ */
     require(ROOT_PATH . 'include/cls_template.php');
     $smarty = new cls_template;
 
@@ -170,20 +170,20 @@ if (!defined('INIT_NO_SMARTY')) {
         $smarty->assign('ectouch_css', 'themes/' . $_CFG['template'] . '/style.css');
     }
     $smarty->assign('ectouch_themes', 'themes/' . $_CFG['template']);
-    $smarty->assign('site_url', $config['site_url']); //²»´ø/½áÎ²
+    $smarty->assign('site_url', $config['site_url']); //ä¸å¸¦/ç»“å°¾
 }
 
 if (!defined('INIT_NO_USERS')) {
-    /* »áÔ±ĞÅÏ¢ */
+    /* ä¼šå‘˜ä¿¡æ¯ */
     $user = & init_users();
 
     if (!isset($_SESSION['user_id'])) {
-        /* »ñÈ¡Í¶·ÅÕ¾µãµÄÃû³Æ */
+        /* è·å–æŠ•æ”¾ç«™ç‚¹çš„åç§° */
         $site_name = isset($_GET['from']) ? htmlspecialchars($_GET['from']) : addslashes($_LANG['self_site']);
         $from_ad = !empty($_GET['ad_id']) ? intval($_GET['ad_id']) : 0;
 
-        $_SESSION['from_ad'] = $from_ad; // ÓÃ»§µã»÷µÄ¹ã¸æID
-        $_SESSION['referer'] = stripslashes($site_name); // ÓÃ»§À´Ô´
+        $_SESSION['from_ad'] = $from_ad; // ç”¨æˆ·ç‚¹å‡»çš„å¹¿å‘ŠID
+        $_SESSION['referer'] = stripslashes($site_name); // ç”¨æˆ·æ¥æº
 
         unset($site_name);
 
@@ -194,7 +194,7 @@ if (!defined('INIT_NO_USERS')) {
 
     if (empty($_SESSION['user_id'])) {
         if ($user->get_cookie()) {
-            /* Èç¹û»áÔ±ÒÑ¾­µÇÂ¼²¢ÇÒ»¹Ã»ÓĞ»ñµÃ»áÔ±µÄÕÊ»§Óà¶î¡¢»ı·ÖÒÔ¼°ÓÅ»İÈ¯ */
+            /* å¦‚æœä¼šå‘˜å·²ç»ç™»å½•å¹¶ä¸”è¿˜æ²¡æœ‰è·å¾—ä¼šå‘˜çš„å¸æˆ·ä½™é¢ã€ç§¯åˆ†ä»¥åŠä¼˜æƒ åˆ¸ */
             if ($_SESSION['user_id'] > 0) {
                 update_user_info();
             }
@@ -210,20 +210,20 @@ if (!defined('INIT_NO_USERS')) {
         }
     }
 
-    /* ÉèÖÃÍÆ¼ö»áÔ± */
+    /* è®¾ç½®æ¨èä¼šå‘˜ */
     if (isset($_GET['u'])) {
 	
         set_affiliate();
     }
-    /* ÉèÖÃÍÆ¼ö»áÔ± */
+    /* è®¾ç½®æ¨èä¼šå‘˜ */
     if (isset($_GET['wxid'])) {
 	
         set_affiliate();
     }
 
-    /* session ²»´æÔÚ£¬¼ì²écookie */
+    /* session ä¸å­˜åœ¨ï¼Œæ£€æŸ¥cookie */
     if (!empty($_COOKIE['ECS']['user_id']) && !empty($_COOKIE['ECS']['password'])) {
-        // ÕÒµ½ÁËcookie, ÑéÖ¤cookieĞÅÏ¢
+        // æ‰¾åˆ°äº†cookie, éªŒè¯cookieä¿¡æ¯
         $sql = 'SELECT user_id, user_name, password ' .
                 ' FROM ' . $ecs->table('users') .
                 " WHERE user_id = '" . intval($_COOKIE['ECS']['user_id']) . "' AND password = '" . $_COOKIE['ECS']['password'] . "'";
@@ -231,7 +231,7 @@ if (!defined('INIT_NO_USERS')) {
         $row = $db->GetRow($sql);
 
         if (!$row) {
-            // Ã»ÓĞÕÒµ½Õâ¸ö¼ÇÂ¼
+            // æ²¡æœ‰æ‰¾åˆ°è¿™ä¸ªè®°å½•
             $time = time() - 3600;
             setcookie("ECS[user_id]", '', $time, '/');
             setcookie("ECS[password]", '', $time, '/');
@@ -256,14 +256,14 @@ if ((DEBUG_MODE & 4) == 4) {
     include(ROOT_PATH . 'include/lib.debug.php');
 }
 
-/* ÅĞ¶ÏÊÇ·ñÖ§³Ö Gzip Ä£Ê½ */
+/* åˆ¤æ–­æ˜¯å¦æ”¯æŒ Gzip æ¨¡å¼ */
 if (!defined('INIT_NO_SMARTY') && gzip_enabled()) {
     ob_start('ob_gzhandler');
 } else {
     ob_start();
 }
 
-//*20141208ÌğĞÄ100¶À¼Ò¿ª·¢ĞÂÔö*/
+//*20141208ç”œå¿ƒ100ç‹¬å®¶å¼€å‘æ–°å¢*/
 	if (isset($_GET['u']))
     {
 		$u=$_GET['u'];
@@ -274,12 +274,12 @@ if (!defined('INIT_NO_SMARTY') && gzip_enabled()) {
 	}
 	
 	$share_info=array();
-	//µÇÂ½µÄÇé¿ö
+	//ç™»é™†çš„æƒ…å†µ
 	if(!empty($_SESSION['user_id'])){	
 		$user_id=$_SESSION['user_id'];
 		$sql = "SELECT parent_id FROM ". $ecs->table('users') .  "where user_id ='$user_id'";
 		$parent_id=$GLOBALS['db']->getOne($sql);
-		//µÇÂ½»áÔ±Ã»ÉÏ¼¶
+		//ç™»é™†ä¼šå‘˜æ²¡ä¸Šçº§
 		if(empty($parent_id)){
 			if(isset($_GET['u'])){
 				if($u== $user_id){
@@ -293,7 +293,7 @@ if (!defined('INIT_NO_SMARTY') && gzip_enabled()) {
 				}
 			}
 		}else{
-			//µÇÂ½»áÔ±ÓĞÉÏ¼¶
+			//ç™»é™†ä¼šå‘˜æœ‰ä¸Šçº§
 			$sql = "SELECT wxid FROM ". $ecs->table('users') .  "where user_id ='$parent_id'";
 			$share_userid=$GLOBALS['db']->getOne($sql);	
 			$sql = "SELECT * FROM wxch_user where wxid ='$share_userid'";
@@ -301,7 +301,7 @@ if (!defined('INIT_NO_SMARTY') && gzip_enabled()) {
 		}
 	
 	}else{
-		//Ã»µÇÂ½µÄÇé¿ö
+		//æ²¡ç™»é™†çš„æƒ…å†µ
 		if(isset($_GET['u'])){
 				$sql = "SELECT * FROM ".$GLOBALS['ecs']->table('users')." where user_id ='$u'";
 				$user_info=$GLOBALS['db']->getRow($sql);
@@ -311,17 +311,17 @@ if (!defined('INIT_NO_SMARTY') && gzip_enabled()) {
 		}
 	}
 $wechat = new Wechat();
-/*20141208ÌğĞÄ100¶À¼Ò¿ª·¢ĞÂÔö*/
-/* ¼ì²éÊÇ·ñÊÇÎ¢ĞÅä¯ÀÀÆ÷·ÃÎÊ */
+/*20141208ç”œå¿ƒ100ç‹¬å®¶å¼€å‘æ–°å¢*/
+/* æ£€æŸ¥æ˜¯å¦æ˜¯å¾®ä¿¡æµè§ˆå™¨è®¿é—® */
 function is_wechat_browser(){
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
     if (strpos($user_agent, 'MicroMessenger') === false){
-      //echo '·ÇÎ¢ĞÅä¯ÀÀÆ÷½ûÖ¹ä¯ÀÀ';
+      //echo 'éå¾®ä¿¡æµè§ˆå™¨ç¦æ­¢æµè§ˆ';
       return false;
     } else {
-      //echo 'Î¢ĞÅä¯ÀÀÆ÷£¬ÔÊĞí·ÃÎÊ';
+      //echo 'å¾®ä¿¡æµè§ˆå™¨ï¼Œå…è®¸è®¿é—®';
       //preg_match('/.*?(MicroMessenger\/([0-9.]+))\s*/', $user_agent, $matches);
-      //echo '<br>ÄãµÄÎ¢ĞÅ°æ±¾ºÅÎª:'.$matches[2];
+      //echo '<br>ä½ çš„å¾®ä¿¡ç‰ˆæœ¬å·ä¸º:'.$matches[2];
       return true;
     }
 }

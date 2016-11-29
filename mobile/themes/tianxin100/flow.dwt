@@ -484,7 +484,11 @@ var card = document.getElementsByName('card');
 		</div>
         <!-- {/if} 是否使用包装 --> 
 		
-		
+<!--
+	作者：zdwroby@sina.com
+	时间：2016-11-29
+	描述：去掉贺卡
+	
         <!-- {if $card_list} 是否有贺卡 -->
         <dl class="b_no">
           <dd class="dd1">{$lang.goods_card}</dd>
@@ -499,7 +503,15 @@ var card = document.getElementsByName('card');
            </p>
             <!-- {/foreach} 循环贺卡 -->
 		</div>
-        <!-- {/if} 是否使用贺卡 -->         
+        <!-- {/if} 是否使用贺卡 --> 	
+-->		
+
+        
+        
+<!--
+	作者：zdwroby@sina.com
+	时间：2016-11-29
+	描述：去掉是否使用余额
 		<div class="b_no">
             <dl>
               <dd>{$lang.use_surplus}</dd>
@@ -511,7 +523,9 @@ var card = document.getElementsByName('card');
             <dl>
               <dd>{$lang.your_surplus}{$your_surplus|default:0}</dd>
 			    </dl>
-		</div>
+		</div>	
+-->        
+
 		
 		<div class="b_no">
 		 <dl>

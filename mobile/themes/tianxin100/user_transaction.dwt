@@ -257,9 +257,15 @@
         <tr>
           <td class="order_handler"></td>
         </tr>
+        <!--
+        	作者：zdwroby@sina.com
+        	时间：2016-11-29
+        	描述：去掉订单跟踪
         <tr>
             <td class="order_tracking"></td>
-        </tr>
+        </tr>        	
+        -->
+
         <tr>
             <td class="order_back"></td> 
         </tr>

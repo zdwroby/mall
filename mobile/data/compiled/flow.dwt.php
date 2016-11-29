@@ -507,7 +507,11 @@ var card = document.getElementsByName('card');
 		</div>
         <?php endif; ?> 
 		
-		
+<!--
+	作者：zdwroby@sina.com
+	时间：2016-11-29
+	描述：去掉贺卡
+	
         <?php if ($this->_var['card_list']): ?>
         <dl class="b_no">
           <dd class="dd1"><?php echo $this->_var['lang']['goods_card']; ?></dd>
@@ -524,7 +528,15 @@ var card = document.getElementsByName('card');
            </p>
             <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 		</div>
-        <?php endif; ?>         
+        <?php endif; ?> 	
+-->		
+
+        
+        
+<!--
+	作者：zdwroby@sina.com
+	时间：2016-11-29
+	描述：去掉是否使用余额
 		<div class="b_no">
             <dl>
               <dd><?php echo $this->_var['lang']['use_surplus']; ?></dd>
@@ -536,7 +548,9 @@ var card = document.getElementsByName('card');
             <dl>
               <dd><?php echo $this->_var['lang']['your_surplus']; ?><?php echo empty($this->_var['your_surplus']) ? '0' : $this->_var['your_surplus']; ?></dd>
 			    </dl>
-		</div>
+		</div>	
+-->        
+
 		
 		<div class="b_no">
 		 <dl>

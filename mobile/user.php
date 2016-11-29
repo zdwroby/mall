@@ -102,6 +102,7 @@ if ($action == 'default')
         }
     }
 	$info = get_user_default($user_id);
+
 	//会员等级
 	$rank_points = $info['rank_points']; //会员积分
 	

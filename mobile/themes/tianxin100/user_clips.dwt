@@ -50,9 +50,13 @@ function get_search_box(){
 			<div class="per_con">
 				{if $info.avatar neq ''}<img src="{$info.avatar}"/>{else}<img src="images/photo.png"/>{/if}
 				<div class="name_right">
-					<p>会 员 ID :{$info.username}</p><p>微信昵称：{$info.nickname}</p><p>关注时间：{$info.subscribe_time}</p>
+					<p>会 员 ID :{$info.user_id}</p><p>微信昵称：{$info.nickname}</p><p>关注时间：{$info.subscribe_time}</p>
 				</div>
 			</div>
+			<!--
+            	作者：zdwroby@sina.com
+            	时间：2016-11-29
+            	描述：去掉资金红包信息
 			<div class="icon_list">
 				<ul>
 					<li><a href="user.php?act=order_list"><img src="images/icon1.png" /><span>30天订单</span></a></li>
@@ -60,7 +64,9 @@ function get_search_box(){
 					<li><a href="distribute.php?act=account_detail"><img src="images/icon3.png" /><span>余额{$info.surplus}</span></a></li>
 					<li><a href="user.php?act=bonus"><img src="images/icon4.png" /><span>红包</span></a></li>
 				</ul>
-			</div>
+			</div>            	
+            -->
+
 	</div>
 <div class="blank3"></div>
 <section class="wrap">
