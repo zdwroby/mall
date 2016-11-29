@@ -1,12 +1,12 @@
-<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:51:"D:/wamp/www/mall/mobile/themes/tianxin100/goods.dwt";i:1;s:61:"D:/wamp/www/mall/mobile/themes/tianxin100/library/up_menu.lbi";i:2;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/goods_gallery.lbi";i:3;s:62:"D:/wamp/www/mall/mobile/themes/tianxin100/library/comments.lbi";}s:7:"expires";i:1480404033;s:8:"maketime";i:1480400433;}<!DOCTYPE html >
+<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:51:"D:/wamp/www/mall/mobile/themes/tianxin100/goods.dwt";i:1;s:61:"D:/wamp/www/mall/mobile/themes/tianxin100/library/up_menu.lbi";i:2;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/goods_gallery.lbi";i:3;s:62:"D:/wamp/www/mall/mobile/themes/tianxin100/library/comments.lbi";}s:7:"expires";i:1480420371;s:8:"maketime";i:1480416771;}<!DOCTYPE html >
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<title>兰蔻精华眼膜霜15ml_去眼袋_眼部护理_护肤_甜心100</title>
-<meta name="Keywords" content="滑盖 GSM 258 时尚 蓝牙 黑色 金色 白色" />
-<meta name="Description" content="改善眼部基底和眼周围肌肤状况，立现名晰动人的双眸，明亮新生！" />
+<title>玫琳凯中性洗面乳绿2号_眼部护理_护肤_甜心100</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 <link rel="stylesheet" type="text/css" href="themes/tianxin100/css/public.css"/>
 <link rel="stylesheet" type="text/css" href="themes/tianxin100/css/goods.css"/>  
@@ -53,7 +53,7 @@ document.getElementById("share_form").submit();
             <ul>
               <li><a href="javascript:;" class="tab_head on"   id="goods_ka1" onClick="setGoodsTab('goods_ka',1,3)">商品</a></li>
               <li><a href="javascript:;" class="tab_head" id="goods_ka2" onClick="setGoodsTab('goods_ka',2,3)">详情</a></li>
-			  <li><a href="goods_pinglun.php?id=19" class="tab_head" id="goods_ka3" >评价</a></li>
+			  <li><a href="goods_pinglun.php?id=122" class="tab_head" id="goods_ka3" >评价</a></li>
             </ul>
           </div>
           <div class="h-right">
@@ -80,10 +80,10 @@ document.getElementById("share_form").submit();
         </ul>
       </div> 
      <form action="share_goods.php" method="post" id="share_form">
-            <input type="hidden" name="content" value="兰蔻精华眼膜霜15ml">
-            <input type="hidden" name="pics" value="images/201311/goods_img/19_G_1384994159884.jpg">
-            <input type="hidden" name="gid" value="19">
-            <input type="hidden" name="url" value="http://www.mall.com/mobile/goods.php?id=19&u=5202">
+            <input type="hidden" name="content" value="玫琳凯中性洗面乳绿2号">
+            <input type="hidden" name="pics" value="images/201311/goods_img/122_G_1385665161854.jpg">
+            <input type="hidden" name="gid" value="122">
+            <input type="hidden" name="url" value="http://www.mall.com/mobile/goods.php?id=122">
      </form>
       
       <div class="main" id="user_goods_ka_1" style="display:block;">
@@ -91,14 +91,12 @@ document.getElementById("share_form").submit();
             <div class="banner">
   <div id="slider" class="slider" style="overflow: hidden; visibility: visible; list-style: none; position: relative;">
     <ul id="sliderlist" class="sliderlist" style="position: relative; overflow: hidden; transition: left 600ms ease; -webkit-transition: left 600ms ease; width: 2400px; left: -600px;">
-             <li style="float: left; display: block; width: 600px;"><span><a  href="javacript:void(0)"><img title="" width="100%" src="http://www.mall.com/images/200905/thumb_img/19_thumb_P_1241970140527.jpg"></a></span></li>
-             <li style="float: left; display: block; width: 600px;"><span><a  href="javacript:void(0)"><img title="" width="100%" src="http://www.mall.com/images/200905/thumb_img/19_thumb_P_1241970140229.jpg"></a></span></li>
-             <li style="float: left; display: block; width: 600px;"><span><a  href="javacript:void(0)"><img title="" width="100%" src="http://www.mall.com/images/200905/thumb_img/19_thumb_P_1241970175086.jpg"></a></span></li>
-             <li style="float: left; display: block; width: 600px;"><span><a  href="javacript:void(0)"><img title="" width="100%" src="http://www.mall.com/images/201311/thumb_img/19_thumb_P_1384994159656.jpg"></a></span></li>
+             <li style="float: left; display: block; width: 600px;"><span><a  href="javacript:void(0)"><img title="" width="100%" src="http://www.mall.com/images/201311/thumb_img/122_thumb_P_1385665161835.jpg"></a></span></li>
+             <li style="float: left; display: block; width: 600px;"><span><a  href="javacript:void(0)"><img title="" width="100%" src="http://www.mall.com/images/201503/thumb_img/122_thumb_P_1427780472076.jpg"></a></span></li>
+             <li style="float: left; display: block; width: 600px;"><span><a  href="javacript:void(0)"><img title="" width="100%" src="http://www.mall.com/images/201503/thumb_img/122_thumb_P_1427780564809.jpg"></a></span></li>
            </ul>
     <div id="pagenavi">
         <a href="javascript:void(0);" class="active"></a>
-         <a href="javascript:void(0);" ></a>
          <a href="javascript:void(0);" ></a>
          <a href="javascript:void(0);" ></a>
      </div>
@@ -126,18 +124,18 @@ var t2=new TouchSlider({id:'sliderlist', speed:600, timeout:6000, before:functio
 		as[active].className='active';
 	}});
 </script> 
-          <form action="javascript:addToCart(19)" method="post" id="purchase_form" name="ECS_FORMBUY" >
+          <form action="javascript:addToCart(122)" method="post" id="purchase_form" name="ECS_FORMBUY" >
             <div class="product_info">
               <div class="info_dottm">
-                <h3 class="name">兰蔻精华眼膜霜15ml</h3>
+                <h3 class="name">玫琳凯中性洗面乳绿2号</h3>
                 <div class="right"><a onClick="tiaozhuan()"><div id="pro_share" class="share"></div></a></div>
               </div>
               
               <dl class="goods_price">
                <script type="text/javascript" src="data/static/js/lefttime.js"></script>                  
                    
-              <dt> <span id="ECS_GOODS_AMOUNT">￥<span>429</span></span><font>价格：560.00</font>                                  <p>购买此商品赠送429积分</p>
-                                  </dt>
+              <dt> <span id="ECS_GOODS_AMOUNT">￥<span>69</span></span><font>价格：82.81</font>                                  <p>购买此商品赠送50积分</p>
+                                </dt>
                             </dl>
               <ul class="price_dottm">
                <li>0人评价</li>
@@ -149,7 +147,7 @@ var t2=new TouchSlider({id:'sliderlist', speed:600, timeout:6000, before:functio
      <div class="att_title">
             
             <span>惠</span>
-     <p> 购买此商品赠送： 429积分</p>
+     <p> 购买此商品赠送： 50积分</p>
          
       </div>
       </div>
@@ -164,7 +162,7 @@ var t2=new TouchSlider({id:'sliderlist', speed:600, timeout:6000, before:functio
          
       
                <ul class="youhui_list1" style="margin-top:0px;"> 
-                          <li><img src="themes/tianxin100/images/hui.png">购买此商品赠送： 429积分</li> 
+                          <li><img src="themes/tianxin100/images/hui.png">购买此商品赠送： 50积分</li> 
                          
         
               
@@ -182,7 +180,7 @@ var t2=new TouchSlider({id:'sliderlist', speed:600, timeout:6000, before:functio
          <script language="javascript" type="text/javascript">  function goods_cut(){var num_val=document.getElementById('number');  var new_num=num_val.value;  var Num = parseInt(new_num);  if(Num>1)Num=Num-1;  num_val.value=Num;}  function goods_add(){var num_val=document.getElementById('number');  var new_num=num_val.value;  var Num = parseInt(new_num);  Num=Num+1;  num_val.value=Num;} </script>
          <span class="ui-number">
           <button type="button" class="decrease" onclick="goods_cut();changePrice();">-</button>
-          <input type="text" class="num" id="number" onblur="changePrice();" name="number" value="1" min="1" max="7"/>
+          <input type="text" class="num" id="number" onblur="changePrice();" name="number" value="1" min="1" max="9994"/>
           <button type="button" class="increase" onclick="goods_add();changePrice();">+</button>
           </span>
       </div>    
@@ -199,19 +197,19 @@ var t2=new TouchSlider({id:'sliderlist', speed:600, timeout:6000, before:functio
     <li  class="user_price">			
 		        <p>
          <span class="key">注册用户：</span>
-         <b class="p-price-v">￥<span>429</span></b>
+         <b class="p-price-v">￥<span>69</span></b>
          </p>
              <p>
          <span class="key">vip：</span>
-         <b class="p-price-v">￥<span>408</span></b>
+         <b class="p-price-v">￥<span>66</span></b>
          </p>
              <p>
          <span class="key">微信用户：</span>
-         <b class="p-price-v">￥<span>429</span></b>
+         <b class="p-price-v">￥<span>69</span></b>
          </p>
              <p>
          <span class="key">分红100：</span>
-         <b class="p-price-v">￥<span>429</span></b>
+         <b class="p-price-v">￥<span>69</span></b>
          </p>
      
     </li>
@@ -276,11 +274,9 @@ changePrice();
       
       <div class="main" id="user_goods_ka_2" style="display:none">
       <div class="product_main" style=" margin-top:40px;"> 
-          <div class="product_images product_desc" id="product_desc"> <p>从整体来看，三星SGH-F258比较<font size="3" color="#ff0000"><strong>时尚</strong></font>可爱，三围尺寸为94&times;46&times;17.5mm，重量为96克，曲线柔和具有玲珑美感。</p>
-<p>&nbsp;</p>
-<p>三星F258的前面板整体应用<strong><font size="3" color="#ff0000">镜面效果</font></strong>，2.0英寸显示屏幕略显窄小，导航键与功能键在滑盖滑开之前是前面板的全部控制键，没有挂断和接听键，不过，五向键有<font size="3"><strong><font color="#ff0000">音乐操</font><font color="#ff0000">作</font></strong></font>功能，明确显示了F258音乐手机的定位。</p>
-<p>&nbsp;</p>
-<p>F258的数字键键区采用了极具金属质感的平板式设计，每颗按键的面积足够大，按键与按键之间的间隔明显，操作起来手感舒适。</p> </div>
+          <div class="product_images product_desc" id="product_desc"> <p>
+	&nbsp;111
+</p> </div>
         </div>
               <section class="index_floor">
     <h2 style=" border-bottom:1px solid #ddd ">
@@ -288,7 +284,7 @@ changePrice();
           </h2>
     
       <ul class="xiangq">
-                       <li><p>:</p><span>白色</span></li>
+                       <li><p>:</p><span>油性</span></li>
                                                 <li><p>商品重量：</p><span>0克</span><li>
                  
       </ul>
@@ -297,9 +293,9 @@ changePrice();
       
       <div class="tab_attrs tab_item hide" id="user_goods_ka_3" style="display:none;">
         <script type="text/javascript" src="data/static/js/utils.js"></script><div id="ECS_COMMENT"> 
-554fcae493e564ee0dc75bdf2ebf94cacomments|a:3:{s:4:"name";s:8:"comments";s:4:"type";i:0;s:2:"id";i:19;}554fcae493e564ee0dc75bdf2ebf94ca</div>
+554fcae493e564ee0dc75bdf2ebf94cacomments|a:3:{s:4:"name";s:8:"comments";s:4:"type";i:0;s:2:"id";i:122;}554fcae493e564ee0dc75bdf2ebf94ca</div>
  
-        <script language="javascript"> ShowMyComments(19,0,1);</script>
+        <script language="javascript"> ShowMyComments(122,0,1);</script>
       </div>
       
     </div>
@@ -321,15 +317,15 @@ function goTop(){
  <ul> 
  <li class="bian"><a href="index.php"><em class="goods_nav1"></em><span>首页</span></a> </li>
  <li class="bian"><a href="tel:0755-3763625"><em class="goods_nav2"></em><span>客服</span></a> </li>
- <li><a href="javascript:collect(19)" id="favorite_add"><em class="goods_nav3"></em><span>收藏</span></a></li>
+ <li><a href="javascript:collect(122)" id="favorite_add"><em class="goods_nav3"></em><span>收藏</span></a></li>
  </ul>
  <dl>
- <dd class="flow"><a class="button active_button" href="javascript:addToCart(19);">加入购物车</a> </dd>
- <dd class="goumai"><a style="display:block;" href="javascript:addToCart1(19)">立即购买</a> </dd>
+ <dd class="flow"><a class="button active_button" href="javascript:addToCart(122);">加入购物车</a> </dd>
+ <dd class="goumai"><a style="display:block;" href="javascript:addToCart1(122)">立即购买</a> </dd>
  </dl>                
 </div>                
 <script type="text/javascript">
-var goods_id = 19;
+var goods_id = 122;
 var goodsattr_style = 1;
 var gmt_end_time = 0;
 var day = "天";
@@ -337,8 +333,8 @@ var hour = "小时";
 var minute = "分钟";
 var second = "秒";
 var end = "结束";
-var goodsId = 19;
-var now_time = 1480371633;
+var goodsId = 122;
+var now_time = 1480387972;
 onload = function(){ 
   changePrice();
   try {onload_leftTime();}
@@ -379,9 +375,9 @@ function changePriceResponse(res)
   wx.config({
     debug: false,
     appId: 'wxac2407dbc321d222',
-    timestamp: 1480400433,
-    nonceStr: 'aQpkHA1kZHAq73S2',
-    signature: '237c18ae2a42b311fc01ee01b50e1f955211ed4c',
+    timestamp: 1480416772,
+    nonceStr: 'xGU8ZVtlRBfzUsJG',
+    signature: '0b70f097c08986e41bb27c14810ccbcc2baabeff',
     jsApiList: [
         'onMenuShareTimeline',
         'onMenuShareAppMessage' 
@@ -390,17 +386,16 @@ function changePriceResponse(res)
  wx.ready(function () {
 	//甜心100监听“分享给朋友”
     wx.onMenuShareAppMessage({
-      title: '兰蔻精华眼膜霜15ml',
-      desc: '兰蔻精华眼膜霜15ml',
-      link: 'http://www.mall.com/mobile/goods.php?id=19&u=5202',
-      imgUrl: 'http://www.mall.com/images/201311/source_img/19_G_1384994159117.jpg',
+      title: '玫琳凯中性洗面乳绿2号',
+      desc: '玫琳凯中性洗面乳绿2号',
+      link: '',
+      imgUrl: 'http://www.mall.com/images/201311/source_img/122_G_1385665161828.png',
       trigger: function (res) {
 		
-		        alert('恭喜！分享可以获取提成哦！');
+				alert('糟糕，需要分销商登录才能获得提成哦！');
 				
       },
       success: function (res) {
-		        window.location.href="http://www.mall.com/mobile/re_url.php?user_id=5202&type=1"; 
 		      },
       cancel: function (res) {
         alert('很遗憾，您已取消分享');
@@ -411,16 +406,15 @@ function changePriceResponse(res)
     });
 	//分享到朋友圈甜心100
     wx.onMenuShareTimeline({
-      title: '兰蔻精华眼膜霜15ml',
-      link: 'http://www.mall.com/mobile/goods.php?id=19&u=5202',
-      imgUrl: 'http://www.mall.com/images/201311/source_img/19_G_1384994159117.jpg',
+      title: '玫琳凯中性洗面乳绿2号',
+      link: '',
+      imgUrl: 'http://www.mall.com/images/201311/source_img/122_G_1385665161828.png',
       trigger: function (res) {
 			
-        			alert('恭喜！分享可以获取提成哦！');
+        			alert('糟糕，需要分销商登录才能获得提成哦！');
 		      },
       success: function (res) {
-       	        window.location.href="http://www.mall.com/mobile/re_url.php?user_id=5202&type=2"; 
-		      },
+       	      },
       cancel: function (res) {
          alert('很遗憾，您已取消分享');
       },

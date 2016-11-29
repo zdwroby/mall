@@ -9,7 +9,8 @@
 <meta name="format-detection" content="telephone=no" />
 <link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
 <link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-<link href="{$ectouch_themes}/ectouch.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="themes/tianxin100/css/public.css"/>
+<link href="{$ectouch_themes}/ectouch.css?version=3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="page" style="right: 0px; left: 0px; display: block;">
@@ -27,7 +28,8 @@
   </header>
   <!-- #BeginLibraryItem "/library/goods_list_search.lbi" --><!-- #EndLibraryItem -->
   <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
-  <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+  <footer>  <!-- #BeginLibraryItem "/library/footer_nav.lbi" --> <!-- #EndLibraryItem --> </footer>
 </div>
 
 <!--筛选 S--->

@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:8:{i:0;s:51:"D:/wamp/www/mall/mobile/themes/tianxin100/index.dwt";i:1;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/page_header.lbi";i:2;s:62:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_ad.lbi";i:3;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_icon.lbi";i:4;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/ad_position.lbi";i:5;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_new.lbi";i:6;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_hot.lbi";i:7;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/footer_nav.lbi";}s:7:"expires";i:1480414708;s:8:"maketime";i:1480411108;}<!DOCTYPE html >
+<?php exit;?>a:3:{s:8:"template";a:8:{i:0;s:51:"D:/wamp/www/mall/mobile/themes/tianxin100/index.dwt";i:1;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/page_header.lbi";i:2;s:62:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_ad.lbi";i:3;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_icon.lbi";i:4;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/ad_position.lbi";i:5;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_new.lbi";i:6;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_hot.lbi";i:7;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/footer_nav.lbi";}s:7:"expires";i:1480418891;s:8:"maketime";i:1480415291;}<!DOCTYPE html >
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
@@ -158,7 +158,7 @@ box-shadow: 0 0 2px #ccc; }
       <div class="bd">
         <ul>
                     <li>
-            <a href="goods.php?id=19&u=5202" title="兰蔻精华眼膜霜15ml">
+            <a href="goods.php?id=19" title="兰蔻精华眼膜霜15ml">
              <div class="index_pro"> 
               <div class="products_kuang">
                 <img src="http://www.mall.com/images/201311/thumb_img/19_thumb_G_1384994159077.gif"></div>
@@ -167,13 +167,13 @@ box-shadow: 0 0 2px #ccc; }
                  <a href="javascript:addToCart(19)" class="btns">
                     <img src="themes/tianxin100/images/index_flow.png">
                 </a>
-              <span href="goods.php?id=19&u=5202" class="price_pro">￥<span>429</span></span>
+              <span href="goods.php?id=19" class="price_pro">￥<span>429</span></span>
               </div>
               </div>
             </a>
           </li>
                     <li>
-            <a href="goods.php?id=118&u=5202" title="理肤泉特安洁面乳200ml">
+            <a href="goods.php?id=118" title="理肤泉特安洁面乳200ml">
              <div class="index_pro"> 
               <div class="products_kuang">
                 <img src="http://www.mall.com/images/201311/thumb_img/118_thumb_G_1385664875584.jpg"></div>
@@ -182,13 +182,13 @@ box-shadow: 0 0 2px #ccc; }
                  <a href="javascript:addToCart(118)" class="btns">
                     <img src="themes/tianxin100/images/index_flow.png">
                 </a>
-              <span href="goods.php?id=118&u=5202" class="price_pro">￥<span>119</span></span>
+              <span href="goods.php?id=118" class="price_pro">￥<span>119</span></span>
               </div>
               </div>
             </a>
           </li>
                     <li>
-            <a href="goods.php?id=122&u=5202" title="玫琳凯中性洗面乳绿2号">
+            <a href="goods.php?id=122" title="玫琳凯中性洗面乳绿2号">
              <div class="index_pro"> 
               <div class="products_kuang">
                 <img src="http://www.mall.com/images/201311/thumb_img/122_thumb_G_1385665161614.jpg"></div>
@@ -197,7 +197,7 @@ box-shadow: 0 0 2px #ccc; }
                  <a href="javascript:addToCart(122)" class="btns">
                     <img src="themes/tianxin100/images/index_flow.png">
                 </a>
-              <span href="goods.php?id=122&u=5202" class="price_pro">￥<span>69</span></span>
+              <span href="goods.php?id=122" class="price_pro">￥<span>69</span></span>
               </div>
               </div>
             </a>
@@ -225,7 +225,7 @@ box-shadow: 0 0 2px #ccc; }
       <div class="bd">
         <ul>
                     <li>
-            <a href="goods.php?id=9&u=5202" title="雅诗兰黛第六代特润精华露50ml">
+            <a href="goods.php?id=9" title="雅诗兰黛第六代特润精华露50ml">
              <div class="index_pro"> 
               <div class="products_kuang">
                 <img src="http://www.mall.com/images/201311/thumb_img/9_thumb_G_1384987018566.gif"></div>
@@ -234,13 +234,13 @@ box-shadow: 0 0 2px #ccc; }
                    <a href="javascript:addToCart(9)" class="btns">
                     <img src="themes/tianxin100/images/index_flow.png">
                 </a>
-              <span href="goods.php?id=9&u=5202" class="price_pro">￥<span>669</span></span>
+              <span href="goods.php?id=9" class="price_pro">￥<span>669</span></span>
               </div>
               </div>
             </a>
           </li>
                     <li>
-            <a href="goods.php?id=1&u=5202" title="希思黎轻柔护肤西柚柔肤水250ml">
+            <a href="goods.php?id=1" title="希思黎轻柔护肤西柚柔肤水250ml">
              <div class="index_pro"> 
               <div class="products_kuang">
                 <img src="http://www.mall.com/images/201311/thumb_img/1_thumb_G_1384988540522.gif"></div>
@@ -249,13 +249,13 @@ box-shadow: 0 0 2px #ccc; }
                    <a href="javascript:addToCart(1)" class="btns">
                     <img src="themes/tianxin100/images/index_flow.png">
                 </a>
-              <span href="goods.php?id=1&u=5202" class="price_pro">￥<span>399</span></span>
+              <span href="goods.php?id=1" class="price_pro">￥<span>399</span></span>
               </div>
               </div>
             </a>
           </li>
                     <li>
-            <a href="goods.php?id=122&u=5202" title="玫琳凯中性洗面乳绿2号">
+            <a href="goods.php?id=122" title="玫琳凯中性洗面乳绿2号">
              <div class="index_pro"> 
               <div class="products_kuang">
                 <img src="http://www.mall.com/images/201311/thumb_img/122_thumb_G_1385665161614.jpg"></div>
@@ -264,7 +264,7 @@ box-shadow: 0 0 2px #ccc; }
                    <a href="javascript:addToCart(122)" class="btns">
                     <img src="themes/tianxin100/images/index_flow.png">
                 </a>
-              <span href="goods.php?id=122&u=5202" class="price_pro">￥<span>69</span></span>
+              <span href="goods.php?id=122" class="price_pro">￥<span>69</span></span>
               </div>
               </div>
             </a>
@@ -404,9 +404,9 @@ $('#searchtype').val($(this).attr('0'));
   wx.config({
     debug: false,
     appId: 'wxac2407dbc321d222',
-    timestamp: 1480411108,
-    nonceStr: 'IQQztEDqOz0GC6Df',
-    signature: '02f15d1600be80e4dd2f1573feb670e27a698f1e',
+    timestamp: 1480415291,
+    nonceStr: 'lwvK3OfZx66tgp7a',
+    signature: '129a2854854d172115a6270b8945ade11a841405',
     jsApiList: [
         'onMenuShareTimeline',
         'onMenuShareAppMessage' 
@@ -417,15 +417,14 @@ $('#searchtype').val($(this).attr('0'));
     wx.onMenuShareAppMessage({
       title: '甜心100',
       desc: '甜心100',
-      link: 'http://www.mall.com/mobile/index.php?u=5202',
+      link: '',
       imgUrl: 'http://wxmiqi.wushuai.net//mobile/images/201511/1447426792261746203.jpg',
       trigger: function (res) {
 		
-		        alert('恭喜！分享可以获取提成哦！');
+				alert('糟糕，需要分销商登录才能获得提成哦！');
 				
       },
       success: function (res) {
-		        window.location.href="http://www.mall.com/mobile/re_url.php?user_id=5202&type=1"; 
 		      },
       cancel: function (res) {
         alert('很遗憾，您已取消分享');
@@ -437,15 +436,14 @@ $('#searchtype').val($(this).attr('0'));
 	//分享到朋友圈甜心100
     wx.onMenuShareTimeline({
       title: '甜心100',
-      link: 'http://www.mall.com/mobile/index.php?u=5202',
+      link: '',
       imgUrl: 'http://wxmiqi.wushuai.net//mobile/images/201511/1447426792261746203.jpg',
       trigger: function (res) {
 			
-        			alert('恭喜！分享可以获取提成哦！');
+        			alert('糟糕，需要分销商登录才能获得提成哦！');
 		      },
       success: function (res) {
-       	        window.location.href="http://www.mall.com/mobile/re_url.php?user_id=5202&type=2"; 
-		      },
+       	      },
       cancel: function (res) {
          alert('很遗憾，您已取消分享');
       },

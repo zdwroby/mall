@@ -5,22 +5,22 @@
     <div id="scroll_hot" class="scroll_hot">
       <div class="bd">
         <ul>
-          <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_65867500_1480400248');$this->_foreach['hot_goods'] = array('total' => count($_from), 'iteration' => 0);
+          <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_17428200_1480401843');$this->_foreach['hot_goods'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['hot_goods']['total'] > 0):
-    foreach ($_from AS $this->_var['goods_0_65867500_1480400248']):
+    foreach ($_from AS $this->_var['goods_0_17428200_1480401843']):
         $this->_foreach['hot_goods']['iteration']++;
 ?>
           <li>
-            <a href="<?php echo $this->_var['goods_0_65867500_1480400248']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_65867500_1480400248']['name']); ?>">
+            <a href="<?php echo $this->_var['goods_0_17428200_1480401843']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_17428200_1480401843']['name']); ?>">
              <div class="index_pro"> 
               <div class="products_kuang">
-                <img src="<?php echo $this->_var['site_url']; ?><?php echo $this->_var['goods_0_65867500_1480400248']['thumb']; ?>"></div>
-              <div class="goods_name"><?php echo $this->_var['goods_0_65867500_1480400248']['name']; ?></div>
+                <img src="<?php echo $this->_var['site_url']; ?><?php echo $this->_var['goods_0_17428200_1480401843']['thumb']; ?>"></div>
+              <div class="goods_name"><?php echo $this->_var['goods_0_17428200_1480401843']['name']; ?></div>
               <div class="price">
-                   <a href="javascript:addToCart(<?php echo $this->_var['goods_0_65867500_1480400248']['id']; ?>)" class="btns">
+                   <a href="javascript:addToCart(<?php echo $this->_var['goods_0_17428200_1480401843']['id']; ?>)" class="btns">
                     <img src="themes/tianxin100/images/index_flow.png">
                 </a>
-              <span href="<?php echo $this->_var['goods_0_65867500_1480400248']['url']; ?>" class="price_pro"><?php if ($this->_var['goods_0_65867500_1480400248']['promote_price']): ?><?php echo $this->_var['goods_0_65867500_1480400248']['promote_price']; ?><?php else: ?><?php echo $this->_var['goods_0_65867500_1480400248']['shop_price']; ?><?php endif; ?></span>
+              <span href="<?php echo $this->_var['goods_0_17428200_1480401843']['url']; ?>" class="price_pro"><?php if ($this->_var['goods_0_17428200_1480401843']['promote_price']): ?><?php echo $this->_var['goods_0_17428200_1480401843']['promote_price']; ?><?php else: ?><?php echo $this->_var['goods_0_17428200_1480401843']['shop_price']; ?><?php endif; ?></span>
               </div>
               </div>
             </a>

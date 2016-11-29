@@ -20,10 +20,10 @@
             <div class="pagenav-text"> <span><?php echo $this->_var['pager']['page']; ?>/<?php echo $this->_var['pager']['page_count']; ?></span> <i></i> </div>
             <select name="page" class="pagenav-select" onchange="window.location.href=this.options[this.selectedIndex].value" >
             <?php if ($this->_var['pager']['page_number']): ?>
-            <?php $_from = $this->_var['pager']['page_number']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item_0_82869200_1480400223');if (count($_from)):
-    foreach ($_from AS $this->_var['key'] => $this->_var['item_0_82869200_1480400223']):
+            <?php $_from = $this->_var['pager']['page_number']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item_0_25780200_1480401984');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['item_0_25780200_1480401984']):
 ?>    
-              <option value="<?php echo $this->_var['item_0_82869200_1480400223']; ?>"><?php echo $this->_var['key']; ?></option>
+              <option value="<?php echo $this->_var['item_0_25780200_1480401984']; ?>"><?php echo $this->_var['key']; ?></option>
             <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
             <?php endif; ?>
             </select>
