@@ -80,14 +80,15 @@ class yunpay
      *
      * @return void
      */
+    function __construct()
+    {
+        $this->yunpay();
+    }    
     function yunpay()
     {
     }
 
-    function __construct()
-    {
-        $this->yunpay();
-    }
+
 	
     /**
      * 生成支付代码

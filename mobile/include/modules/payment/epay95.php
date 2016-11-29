@@ -83,14 +83,15 @@ class epay95
      *
      * @return void
      */
+    function __construct()
+    {
+        $this->epay95();
+    }    
     function epay95()
     {
     }
 
-    function __construct()
-    {
-        $this->epay95();
-    }
+
 
 	
     /**
