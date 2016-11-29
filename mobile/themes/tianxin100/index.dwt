@@ -33,7 +33,7 @@
 </div>
 <!-- #BeginLibraryItem "/library/index_icon.lbi" --><!-- #EndLibraryItem --> 
 	
-	<!-- #BeginLibraryItem "/library/top_tianxin100_guanzhu.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/top_tianxin100_guanzhu.lbi" --><!-- #EndLibraryItem -->
 	
 	
 
@@ -55,6 +55,9 @@
 .picScroll2 .bd1 li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */ }
 .picScroll2 .bd1 li img{ width:150px; height:150px; }
 .picScroll2 .hd{display:None}
+
+
+
 </style>
 <div class="blank2"></div>
 <div class="item_show_box2 box1 region" style="overflow:hidden">
@@ -140,153 +143,17 @@ TouchSlide({
 </div>
 <!---------------end-------------> 
 <!-- TemplateBeginEditable name="首页推荐模块" -->
-<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
 
-{if $best_goods}
-<section class="index_floor">
-  <div class="floor_body1">
-    <h2><em></em>{$lang.best_goods}<div class="geng"> <a href="../search.php?intro=best" >更多</a> <span></span></div></h2>
-    <div id="scroll_best" class="scroll_hot">
-      <div class="bd">
-        <ul>
-          {foreach from=$best_goods item=goods name=best_goods}
-          <li >
-            <a href="{$goods.url}" title="{$goods.name|escape:html}">
-             <div class="index_pro"> 
-              <div class="products_kuang">
-                <img src="{$site_url}{$goods.thumb}"></div>
-              <div class="goods_name">{$goods.name}</div>
-              <div class="price">
-                         <a href="javascript:addToCart({$goods.id})" class="btns">
-                    <img src="themes/tianxin100/images/index_flow.png">
-                </a>
-              <span href="{$goods.url}" class="price_pro"> {if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</span>
-      
-      
-              </div>
-              </div>
-            </a>
-          </li>
 
-          <!--{if $smarty.foreach.best_goods.iteration%3 eq 0 && $smarty.foreach.best_goods.iteration neq $smarty.foreach.best_goods.total}--> </ul>
-        <ul>
-          <!--{/if}-->{/foreach}</div>
-        <div class="hd">
-          <ul></ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <script type="text/javascript">
-    TouchSlide({ 
-      slideCell:"#scroll_best",
-      titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-      effect:"leftLoop", 
-      autoPage:true, //自动分页
-      //switchLoad:"_src" //切换加载，真实图片路径为"_src" 
-    });
-  </script>
-{/if}
  <!-- #EndLibraryItem -->
 <!-- #BeginLibraryItem "/library/recommend_new.lbi" -->
 
-{if $new_goods}
 
-<section class="index_floor">
-  <div class="floor_body1" >
-    <h2>
-      <em></em>
-      {$lang.new_goods}
-      <div class="geng"><a href="../search.php?intro=new" >更多</a> <span></span></div>
-    </h2>
-    <div id="scroll_new" class="scroll_hot">
-      <div class="bd">
-        <ul>
-          {foreach from=$new_goods item=goods name=new_goods}
-          <li>
-            <a href="{$goods.url}" title="{$goods.name|escape:html}">
-             <div class="index_pro"> 
-              <div class="products_kuang">
-                <img src="{$site_url}{$goods.thumb}"></div>
-              <div class="goods_name">{$goods.name}</div>
-              <div class="price">
-                 <a href="javascript:addToCart({$goods.id})" class="btns">
-                    <img src="themes/tianxin100/images/index_flow.png">
-                </a>
-              <span href="{$goods.url}" class="price_pro">{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</span>
-              </div>
-              </div>
-            </a>
-          </li>
-
-          <!--{if $smarty.foreach.new_goods.iteration%3 eq 0 && $smarty.foreach.new_goods.iteration neq $smarty.foreach.new_goods.total}--> </ul>
-        <ul>
-          <!--{/if}-->{/foreach}</div>
-        <div class="hd">
-          <ul></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script type="text/javascript">
-    TouchSlide({ 
-      slideCell:"#scroll_new",
-      titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-      effect:"leftLoop", 
-      autoPage:true, //自动分页
-      //switchLoad:"_src" //切换加载，真实图片路径为"_src" 
-    });
-  </script>
-{/if}
  <!-- #EndLibraryItem -->
 <!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
 
-{if $hot_goods}
-<section class="index_floor">
-  <div class="floor_body1" >
-    <h2><em></em>{$lang.hot_goods}<div class="geng"><a href="../search.php?intro=hot" >更多</a> <span></span></div></h2>
-    <div id="scroll_hot" class="scroll_hot">
-      <div class="bd">
-        <ul>
-          {foreach from=$hot_goods item=goods name=hot_goods}
-          <li>
-            <a href="{$goods.url}" title="{$goods.name|escape:html}">
-             <div class="index_pro"> 
-              <div class="products_kuang">
-                <img src="{$site_url}{$goods.thumb}"></div>
-              <div class="goods_name">{$goods.name}</div>
-              <div class="price">
-                   <a href="javascript:addToCart({$goods.id})" class="btns">
-                    <img src="themes/tianxin100/images/index_flow.png">
-                </a>
-              <span href="{$goods.url}" class="price_pro">{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</span>
-              </div>
-              </div>
-            </a>
-          </li>
 
-          <!--{if $smarty.foreach.hot_goods.iteration%3 eq 0 && $smarty.foreach.hot_goods.iteration neq $smarty.foreach.hot_goods.total}--> </ul>
-        <ul>
-          <!--{/if}-->{/foreach}</div>
-        <div class="hd">
-          <ul></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script type="text/javascript">
-    TouchSlide({ 
-      slideCell:"#scroll_hot",
-      titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-      effect:"leftLoop", 
-      autoPage:true, //自动分页
-      //switchLoad:"_src" //切换加载，真实图片路径为"_src" 
-    });
-  </script>
-{/if}
  <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 
@@ -294,35 +161,10 @@ TouchSlide({
 <!-- TemplateBeginEditable name="商品分类" -->
 <!-- TemplateEndEditable --> 
 
-<!--精品推荐轮播广告位--> 
-<div id="index_banner" class="index_banner">
-
-				<div class="bd">
-					<ul>
-			{foreach from=$wap_index_img item=ad name=wap_index_img}
-          <li><a href="{$ad.url}"><img src="{$ad.image}" width="100%" /></a></li>
-          {/foreach}
-					</ul>
-				</div>
-
-				<div class="hd">
-					<ul></ul>
-				</div>
-			</div>
-			<script type="text/javascript">
-				TouchSlide({ 
-					slideCell:"#index_banner",
-					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-					mainCell:".bd ul", 
-					effect:"leftLoop", 
-					autoPage:true,//自动分页
-					autoPlay:true //自动播放
-				});
-			</script>
- <!--精品推荐轮播广告位end-->  
 
 
-<footer> <!-- #BeginLibraryItem "/library/page_footer_tianxin.lbi" --> <!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/footer_nav.lbi" --> <!-- #EndLibraryItem --> </footer>
+
+<footer>  <!-- #BeginLibraryItem "/library/footer_nav.lbi" --> <!-- #EndLibraryItem --> </footer>
 
 <!---返回顶部-->
 <script>
@@ -361,7 +203,7 @@ function goTop(){
         </div>
 
                             
-                            <section class="mix_recently_search"><h3>热门搜索</h3>
+<section class="mix_recently_search"><h3>热门搜索</h3>
    {if $searchkeywords}
   <ul>
     {foreach from=$searchkeywords item=val}
@@ -375,7 +217,7 @@ function goTop(){
     <div class="recently_search_null">没有搜索记录</div>
     {/if}
     </section>
-                        </div>  
+</div>  
                         
                                               
 </div>
@@ -505,5 +347,7 @@ $('#searchtype').val($(this).attr('0'));
 });
 <!-- {literal} -->
 </script>
+
+
 </body>
 </html>

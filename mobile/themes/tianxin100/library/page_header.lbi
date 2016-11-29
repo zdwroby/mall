@@ -11,6 +11,12 @@ return true;
 window.onerror = killerrors; 
 //-->
 </script>
+<!--
+	作者：zdwroby@sina.com
+	时间：2016-11-29
+	描述：屏蔽头部图标
 <a href="catalog.php" class="top_bt"></a>
-<a href="flow.php" class='user_btn'></a>
+<a href="flow.php" class='user_btn'></a>	
+-->
+
 <span href="javascript:void(0)" class="logo">{$shop_name}</span>

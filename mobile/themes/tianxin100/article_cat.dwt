@@ -2,13 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>{$page_title} 触屏版</title>
+<title>{$page_title}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name="format-detection" content="telephone=no" />
 <link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
 <link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="themes/tianxin100/css/public.css"/>
 <link href="{$ectouch_themes}/ectouch.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -16,8 +17,13 @@
 <header id="header">
   <div class="header_l header_return"> <a class="ico_10" href="index.php"> 返回 </a> </div>
   <h1> 文章分类 </h1>
-  <div class="header_r header_search"> <a class="ico_03"  onClick="showSearch()"> 搜索 </a> </div>
-  <div id="search_box">
+  <!--
+  	作者：zdwroby@sina.com
+  	时间：2016-11-29
+  	描述：搜索屏蔽
+  	 <div class="header_r header_search"> <a class="ico_03"  onClick="showSearch()"> 搜索 </a> </div>
+  
+    <div id="search_box">
     <div class="search_box">
       <form action="{$search_url}" name="searchForm" id="searchForm_id" method="post">
         <input placeholder="请输入关键词" name="keywords" type="text" id="keywordBox" value="{$search_value}" />
@@ -26,6 +32,9 @@
       </form>
     </div>
     <a class="ico_08" onClick="closeSearch()"></a> </div>
+  -->
+ 
+
 </header>
 
 <div class="blank3"></div>
@@ -41,7 +50,9 @@
   </div>
   <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
 </section>
-<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+
+<footer>  <!-- #BeginLibraryItem "/library/footer_nav.lbi" --> <!-- #EndLibraryItem --> </footer>
 <script type="text/javascript">
 /*头部搜索点击关闭或者弹出搜索框*/  
 function showSearch( ){

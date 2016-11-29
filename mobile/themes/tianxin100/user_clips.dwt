@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>{$page_title} 触屏版</title>
+<title>{$page_title}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -63,13 +63,19 @@ function get_search_box(){
 	</div>
 <div class="blank3"></div>
 <section class="wrap">
+	<!--
+    	作者：zdwroby@sina.com
+    	时间：2016-11-29
+    	描述：
 		<div class="per_icon_list">
 			<a class="per_list" href="distribute.php">
 				<img src="images/icon11.png" class="icon"/>
 				<span>分销中心</span>
 				<img src="images/right.png" class="right_img"/>
 			</a>
-		</div>
+		</div>    	
+    -->
+
 		<div class="per_icon_list">
 		  <a  href="tel:{$service_phone}"
 			<a class="per_list">

@@ -6,10 +6,17 @@
 <li> <a href="./">
     <i class="vf_1"></i>
     <span>首页</span></a></li>
-<li><a href="tel:{$service_phone}">
-    <i class="vf_2"></i>
-    <span>客服</span></a></li>
+
+<!--
+	作者：zdwroby@sina.com
+	时间：2016-11-29
+	描述：分页修改链接
 <li><a href="catalog.php">
+    <i class="vf_3"></i>
+    <span>分类</span></a></li>
+<li>	
+-->
+<li><a href="cat_all.php">
     <i class="vf_3"></i>
     <span>分类</span></a></li>
 <li>
