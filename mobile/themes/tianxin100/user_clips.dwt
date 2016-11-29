@@ -9,6 +9,7 @@
 <meta name="format-detection" content="telephone=no" />
 <link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
 <link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="themes/tianxin100/css/public.css"/>
 <link href="{$ectouch_themes}/ectouch.css" rel="stylesheet" type="text/css" />
 <link href="css/css.css" rel="stylesheet" type="text/css" />
 {* <link rel="stylesheet" href="css/footer.css" /> *}
@@ -649,7 +650,7 @@ jQuery(function($){
 <!-- {/if} --> 
 <!-- /分销订单E --> 
 
-<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<footer>  <!-- #BeginLibraryItem "/library/footer_nav.lbi" --> <!-- #EndLibraryItem --> </footer>
 <div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
 </body>
 <script type="text/javascript">

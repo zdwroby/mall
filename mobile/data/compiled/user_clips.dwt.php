@@ -10,6 +10,7 @@
 <meta name="format-detection" content="telephone=no" />
 <link href="<?php echo $this->_var['ectouch_themes']; ?>/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
 <link href="<?php echo $this->_var['ectouch_themes']; ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="themes/tianxin100/css/public.css"/>
 <link href="<?php echo $this->_var['ectouch_themes']; ?>/ectouch.css" rel="stylesheet" type="text/css" />
 <link href="themes/tianxin100/css/css.css" rel="stylesheet" type="text/css" />
 
@@ -678,7 +679,7 @@ if ($this->_foreach['affdb']['total'] > 0):
 <?php endif; ?> 
  
 
-<?php echo $this->fetch('library/page_footer.lbi'); ?>
+<footer>  <?php echo $this->fetch('library/footer_nav.lbi'); ?> </footer>
 <div style="width:1px; height:1px; overflow:hidden"><?php $_from = $this->_var['lang']['p_y']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'pv');if (count($_from)):
     foreach ($_from AS $this->_var['pv']):
 ?><?php echo $this->_var['pv']; ?><?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?></div>
