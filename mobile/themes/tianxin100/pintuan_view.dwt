@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$page_title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="pt_1.css" rel="stylesheet" type="text/css" /><!--PRINCE 120029121-->
+<link href="css/pt_2.css" rel="stylesheet" type="text/css" /><!--PRINCE 120029121-->
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,lefttime.js'}
+<script type="text/javascript" src="../data/static/js/common1.js"></script>
+<script type="text/javascript" src="{$ectouch_themes}/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+// 筛选商品属性
+jQuery(function($) {
+	$(".info").click(function(){
+		$('.goodsBuy .fields').slideToggle("fast");
+	});
+})
+
+
+onload = function(){
+		document.getElementById('number').value = 1;//更新数量
+}
+
+function changenum(diff) {
+	var num = parseInt(document.getElementById('goods_number').value);
+	var goods_number = num + Number(diff);
+	if( goods_number >= 1){
+		document.getElementById('goods_number').value = goods_number;//更新数量
+		document.getElementById('number').value = goods_number;//更新数量
+		changePrice();
+	}
+}
+</script>
+{insert_scripts files='common.js,lefttime.js'}
+<script type="text/javascript">
+  {foreach from=$lang.js_languages item=item key=key}
+    var {$key} = "{$item}";
+  {/foreach}
+</script>
+</head>
+<body>
+<div id="page" style="right: 0px; left: 0px; display: block;">
+  <header id="header" style="z-index:1;background-color:#F2F4CA; padding-top:5px; border-bottom:solid 1px #D2C253; color:#666; text-align:center; font-size:12px;">
+     {$pintuan.user_nickname}正在拼团<br />小伙伴们快来参加吧
+  </header>
+  <!--商品图 s--->
+  <section class="goods_slider">
+    <a href="pintuan.php?act=view&act_id={$pintuan.act_id}&u={$userid}">
+    <table>
+    <tr>
+    <td rowspan="2" >
+    <img style="margin-left:5px; margin-top:5px;" alt="{$pintuan.goods_name|escape:html}" src="{if strpos($pintuan.goods_thumb,'ttp')>0}{else}{$site_url}{/if}{$pintuan.goods_thumb}" width="80"/>
+    </td>
+    <td style="margin-top:5px; font-size:12px; line-height:15px;padding:5px; " > {$pintuan.act_name|escape:html}
+    </tr>
+    <tr>
+    <td style="font-size:15px;"> {$pintuan.need_people}人团：<em style="color:#FF0000">{$pintuan.price}/件</em>
+    </td>
+    </tr>
+    </table></a>
+    <!-- {if $pintuan.status eq 1 } -->
+    <div class="pt_gs_status"><img src="images/pt_success.png" /></div>
+    <!-- {elseif $pintuan.status eq 2 } -->
+    <div class="pt_gs_status"><img src="images/pt_fail.png" /></div>
+    <!-- {/if } -->
+  </section>
+  <!--商品图 end---> 
+
+
+
+
+
+
+    <!-- {if $pintuan.choose_number eq 1 } -->
+    <section class="goodsBuy " style="margin-top:-10px;border-bottom:solid 1px #999;" >
+        <div class="fields" style=" display:block;">
+          <ul class="quantity">
+            <div class="items">  <span style="color:#999">购买数量：</span> <span class="ui-number radius5">
+              <button type="button" class="decrease radius5" onclick="changenum(-1)">-</button>
+              <input class="num" name="number" id="goods_number" autocomplete="off" value="1" min="1" max="" type="number" />
+              <button type="button" class="increase radius5" onclick="changenum(1)">+</button>
+              </span> </div>
+          </ul>
+        </div>
+    </section>         
+
+    <!-- {/if}  -->
+  <section style="text-align:center; min-height:100px;">
+         <!-- {if $pintuan_orders } -->
+             <!-- {foreach from=$pintuan_orders item=item} -->
+                <!-- {if $item.follow_user_head } -->
+                <img src="{$item.follow_user_head}" style="width:40px;margin-left:5px; margin-top:3px;" >
+                <!--{else}-->
+                <img src="images/pt_icon_indexn_03.png" style="width:40px;margin-left:5px; margin-top:3px;" >
+
+                <!--{/if }-->
+              <!-- {/foreach} --> 
+         <!--{else}-->
+                <!-- {if !empty($pintuan.user_head) } -->
+                <img src="{$pintuan.user_head}" style="width:40px;margin-left:5px; margin-top:3px;" >
+                <!--{else}-->
+                <img src="images/pt_icon_indexn_03.png" style="width:40px;margin-left:5px; margin-top:3px;" >
+                <!--{/if }-->
+        <!--{/if }-->
+  </section>         
+
+  <section style="text-align:center">
+      <!-- {if $pintuan.available_people } -->
+      <div style="font-size:14px">
+      还差&nbsp;<em style="color:#FF0000; font-size:16px;">{$pintuan.available_people}</em>&nbsp;人，盼你如北方人盼暖气
+      </div>       
+      <!--{/if }-->
+
+  
+              <div class="hdsysj" >
+                <p style="width:100%; text-align:center; "> <font class="f3">剩余时间:<span id="leftTime">{$lang.please_waiting}</span></font><br /></p>
+               </div>
+  
+  <div style="height:15px;"><img src="images/pt_sanjiao.png"  /></div>
+  <div style="height:35px; line-height:35px;background:#202020; float:left; width:100%;">
+   <table width="98%" >
+      <tr>
+        <td align="left" height="35" >
+          <!--{if $pintuan.user_head}-->
+         <img src="{$pintuan.user_head}" style="width:30px;margin-left:5px; " >
+         <!--{else}-->
+         <img src="images/pt_icon_indexn_03.png"  style="width:30px; margin-left:5px; ">
+        <!--{/if }-->
+        </td>
+        <td align="left" height="35"  style="font-size:10px; color:#999; margin-left:5px;padding-bottom:12px;">
+        &nbsp;&nbsp; 团长:{$pintuan.user_nickname}
+       </td>
+        <td align="right" height="35" style="font-size:10px; color:#999; margin-left:5px;padding-bottom:12px;">
+        <em style="font-size:10px; color:#999;">发起时间：{$pintuan.create_time}</em></td>
+      </tr>
+    </table>
+  </div>
+  </section>
+
+<div class="hdjs" id=product>
+       <p>玩法介绍：</p>
+</div> 
+<div class="s-detail" >
+      <div class="desc wrap" >
+       <img src="images/pt_desc.jpg" style="width:100%;height:auto"  />
+      </div>
+</div>
+<!--商品详情 E  PRINCE 120029121-->  
+  <div class="hdsysj" ><p style="width:100%; text-align:center; color:#FFFFFF"> <a href="pintuan.php" style="color:#FFF">更多拼团活动请点击这里>></a></p></div>
+ <br /><br /><br /><br /><br />
+ 
+<form action="pintuan.php?act=buy" method="post" name="buy_form">
+                          <input type="hidden" name="pt_id" value="{$pintuan.pt_id}" />
+                          <input type="hidden" name="act_id" value="{$pintuan.act_id}" />
+                          <input type="hidden" name="level" value="{$pintuan.need_people}" />
+                          <input type="hidden" id="number" name="number" value="1" />
+</form>
+ 
+<div class="activity_nav">
+ <ul> 
+ <li class="activity_bian"><a href="index.php"><em class="goods_nav1"></em><span>首页</span></a> </li>
+ <li style=" width:66%; line-height:50px; text-align:center; color:#FF0000;" >
+ <a  href="pintuan.php?act=userlist" style="color:#FF0000;">我的拼团</a>  
+ </li>
+ </ul>
+ <dl>
+        {if $center_click}
+  <dd class="flow"><a class="button active_button" onclick="showFDiv();">{$center_action}</a> </dd>
+         {else}
+  <dd class="flow"><a class="button active_button" onclick="">{$center_action}</a> </dd>
+       {/if}
+
+  <!--{if $pintuan.need_login && ($userid eq 0)   }-->
+     <dd class="goumai"><a style="display:block;" onclick="showReg();">立即参团</a> </dd>
+  <!--{else}-->
+       {if $right_click}
+        <dd class="goumai"><a style="display:block;" onclick="buy_form.submit();">{$right_action}</a> </dd>
+       {else}
+        <dd class="goumai"><a style="display:block;" href="{$right_url}">{$right_action}</a> </dd>
+       {/if}
+  <!--{/if}-->
+
+
+
+ </dl>                
+</div>
+ 
+</div>
+
+    <!--关注+分享+返回顶部-Start  PRINCE 120029121-->
+         <!--弹出层 S-->
+        <script type="text/javascript">
+            function showFDiv(){
+                document.getElementById('popDiv').style.display = 'block';
+				document.getElementById('hidDiv').style.display = 'block';
+				document.getElementById('cartNum').innerHTML = document.getElementById('goods_number').value;
+				document.getElementById('cartPrice').innerHTML = document.getElementById('ECS_GOODS_AMOUNT').innerHTML;
+            }
+            function closeFDiv(){
+                document.getElementById('popDiv').style.display = 'none';
+				document.getElementById('hidDiv').style.display = 'none';
+				document.getElementById('joinDiv').style.display = 'none';
+            }
+            function showReg(){
+                document.getElementById('popReg').style.display = 'block';
+				document.getElementById('hidReg').style.display = 'block';
+            }
+            function closeReg(){
+                document.getElementById('popReg').style.display = 'none';
+				document.getElementById('hidReg').style.display = 'none';
+            }
+         </script>
+		<script>
+        function goTop(){
+            $('html,body').animate({'scrollTop':0},600);
+        }
+        </script>
+        <div class="tipMask" id="hidDiv" style="display:none; z-index:9000; background-color:#000; opacity:0.5;" ></div>
+        <div class="popGeneral" id="popDiv" style="background:none; top:0px; ">
+        <img src="{$ectouch_themes}/images/share_guide.png" onClick="closeFDiv()"  width="100%" height="100%"/>
+        </div>
+        
+        <!--关注弹出框 S-->
+        <div class="tipMask" id="hidReg" style="display:none; z-index:9000; background-color:#000; opacity:0.5;" ></div>
+        <div class="popGeneral" id="popReg"  style=" display:none; background:none; bottom:50px;text-align:center;" onclick="closeReg()">
+          <!--{if $qr_path}-->
+         <img src="{$_SERVER[HTTP_HOST]}/wechat/qrcode/{$qr_path}" style="width:80%;height:auto" >
+         <!--{elseif $pintuan.qrcode_img}-->
+                <img src="{$pintuan.qrcode_img}" style="width:80%;height:auto"  />
+         <!--{else}-->
+                <img src="{$_SERVER[HTTP_HOST]}/mobile/images/weixin/pt_qrcode.jpg" style="width:80%;height:auto"  />
+         <!--{/if }-->
+        </div>
+        <!--关注弹出框 E-->
+  
+
+    <!--关注+分享+返回顶部-End  PRINCE 120029121-->
+
+
+{insert_scripts files='transport.js,utils.js'}
+<!--商品参数 E--> 
+<script type="text/javascript" src="{$ectouch_themes}/js/zepto.min.js"></script> 
+<script type="text/javascript">
+var gmt_end_time = "{$pintuan.end_time|default:0}";
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+var now_time = {$now_time};
+{/foreach}
+<!-- {literal} -->
+
+onload = function()
+{
+  try
+  {
+    onload_leftTime(now_time);
+	document.getElementById('number').value = 1;//更新数量
+  }
+  catch (e)
+  {}
+}
+<!-- {/literal} -->
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+<!-- {/literal} -->
+  wx.config({
+    debug: false,
+    appId: '{$signPackage.appId}',
+    timestamp: {$signPackage.timestamp},
+    nonceStr: '{$signPackage.nonceStr}',
+    signature: '{$signPackage.signature}',
+    jsApiList: [
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage' 
+    ]
+  });
+ wx.ready(function () {
+	//监听“分享给朋友”
+    wx.onMenuShareAppMessage({
+      title: '{if $pintuan.share_title }{$pintuan.share_title }{else}{$pintuan.act_name }{/if}',
+      desc: '{if $pintuan.share_brief }{$pintuan.share_brief }{else}{$pintuan.act_name }{/if}',
+      link: '{$site_url}mobile/{$pintuan.share_url}',
+      imgUrl: '{if strpos($pintuan.share_img,'ttp')>0}{else}{$site_url}{/if}{$pintuan.share_img}', //--PRINCE 120029121
+      trigger: function (res) {		
+      },
+      success: function (res) {
+      },
+      cancel: function (res) {
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+	
+	//分享到朋友圈
+    wx.onMenuShareTimeline({
+      title: '{if $pintuan.share_title }{$pintuan.share_title }{else}{$pintuan.act_name }{/if}',
+      link: '{$site_url}mobile/{$pintuan.share_url}',
+      imgUrl: '{if strpos($pintuan.share_img,'ttp')>0}{else}{$site_url}{/if}{$pintuan.share_img}', //--PRINCE 120029121
+      trigger: function (res) {		
+      },
+      success: function (res) {
+      },
+      cancel: function (res) {
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+	
+});
+<!-- {literal} -->
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="entry-list clearfix">
+	<nav>
+		<ul>
+			<!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+			<li>
+				<a href="{$nav.url}">
+					<img alt="{$nav.name}" src="{$nav.pic}" />
+					<span>{$nav.name}</span>
+				</a>
+			</li>
+			{/foreach}
+		</ul>
+	</nav>
+</div>

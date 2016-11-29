@@ -1,0 +1,76 @@
+﻿<!-- $Id: cut_view.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../data/static/js/utils.js,./js/listtable.js"}
+<div class="list-div">
+    <table width="100%" cellpadding="3" cellspacing="1">
+      <tr>
+        <th colspan="18"><strong>{$info.cut_name} </strong></th>
+      </tr>
+      <tr>
+        <td><strong>{$lang.start_time}: </strong></td><td colspan="3">{$info.start_time}</td>
+        <td><strong>{$lang.end_time}: </strong></td><td colspan="3">{$info.end_time}</td>
+        <td><strong>保底价格: </strong></td><td colspan="2">{$info.max_price}</td>
+      </tr>
+
+    </table>
+</div>
+
+<form method="post" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+
+<table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('user_id');">发起用户ID</a>{$sort_user_id}</th>
+      <th><a href="javascript:listTable.sort('user_nickname');">发起用户昵称</a>{$sort_user_nickname}</th>
+      <th><a href="javascript:listTable.sort('activity_time');">发起时间</a>{$sort_activity_time}</th>
+      <th><a href="javascript:listTable.sort('new_price');">当前价格</a>{$sort_new_price}</th>
+      <th><a href="javascript:listTable.sort('new_price');">是否已到底价</a>{$sort_new_price}</th>
+      <th><a href="javascript:listTable.sort('order_times');">下单次数</a>{$sort_order_times}</th>
+      <th>{$lang.handler}</th>
+
+    </tr>
+    {foreach from=$bid_list item=bid}
+    <tr>
+      <td align="center">{$bid.user_id}</td>
+      <td align="center">{$bid.user_nickname}</td>
+      <td align="center">{$bid.activity_time}</td>
+      <td align="center">{$bid.new_price}</td>
+      <td align="center">{if $info.max_price eq $bid.new_price}是{else}否{/if}</td>
+      <td align="center">{$bid.order_times}</td>
+      <td align="center">
+        <a href="cut.php?act=view&amp;act_id={$bid.act_id}&amp;uid={$bid.user_id}" title="{$lang.view_detail}"><img src="images/icon_view.gif" border="0" height="16" width="16"></a>
+      </td>
+    </tr>
+    {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+    {/foreach}
+    <tr>
+      <td align="right" nowrap="true" colspan="8">{include file="page.htm"}</td>
+    </tr>
+</table>
+
+{if $full_page}
+</div>
+</form>
+
+<script type="text/javascript" language="JavaScript">
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+  listTable.query = "query_bid";
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+
+  {literal}
+  onload = function()
+  {
+    startCheckOrder();  // 开始检查订单
+  }
+  {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}

@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+<div class="blank2"></div>
+<div class="rmtj">
+<a href="search.php?intro=best"><div class="rmtj_left">热卖</div></a>
+<a href="search.php?intro=best"><div class="rmtj_right"></div></a>
+</div>
+<ul class="chanpin">
+<!--{foreach from=$hot_goods item=goods name=hot_goods}-->
+	<li>
+		<div class="chanpin_mb">
+		<a href="{$goods.url}"><img src="{$site_url}{$goods.thumb}" /></a>
+		<!-- {if $goods.promote_price neq ""} --> 
+		<P><em class="red">{$goods.promote_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!-- {else}--> 
+		<P><em class="red">{$goods.shop_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!--{/if}-->
+		
+		<p>{$goods.name|escape:html|truncate:12}</p>
+		</div>
+	</li>
+ <!--{/foreach}-->
+</ul>
+<!-- {/if} -->
+

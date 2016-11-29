@@ -1,0 +1,84 @@
+<!-- $Id: cut_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../data/static/js/utils.js,./js/listtable.js"}
+<div class="form-div">
+  <form action="javascript:searchCut()" name="searchForm">
+    <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" />
+    {$lang.cut_name} <input type="text" name="keyword" /> <input type="submit" value="{$lang.button_search}" class="button" />
+  </form>
+</div>
+
+<form method="post" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+
+  <table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('act_id'); ">{$lang.record_id}</a>{$sort_act_id}</th>
+      <th><a href="javascript:listTable.sort('cut_name'); ">活动名称</a>{$sort_cut_name}</th>
+      <th><a href="javascript:listTable.sort('goods_name'); ">产品名称</a>{$sort_goods_name}</th>
+      <th><a href="javascript:listTable.sort('start_time'); ">开始时间</a>{$sort_start_time}</th>
+      <th><a href="javascript:listTable.sort('end_time'); ">结束时间</a>{$sort_end_time}</th>
+      <th>保底价格</a></th>
+      <th>{$lang.handler}</th>
+    </tr>
+    {foreach from=$cut_list item=cut}
+    <tr>
+      <td align="center">{$cut.act_id}</td>
+      <td width="25%" class="first-cell"><span onclick="listTable.edit(this, 'edit_cut_name', {$cut.act_id})">{$cut.cut_name}</span></td>
+      <td width="25%"><span>{$cut.goods_name}</span></td>
+      <td align="center">{$cut.start_time}</td>
+      <td align="center">{$cut.end_time}</td>
+      <td align="right">{$cut.max_price}</td>
+      <td align="center">
+        <a href="cut.php?act=view&amp;act_id={$cut.act_id}" title="{$lang.view_detail}"><img src="images/icon_view.gif" border="0" height="16" width="16"></a>
+        <a href="cut.php?act=edit&amp;id={$cut.act_id}" title="{$lang.edit}"><img src="images/icon_edit.gif" border="0" height="16" width="16"></a>
+        <a href="javascript:;" onclick="listTable.remove({$cut.act_id},'{$lang.drop_confirm}')" title="{$lang.remove}"><img src="images/icon_drop.gif" border="0" height="16" width="16"></a>
+      </td>
+    </tr>
+    {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+    {/foreach}
+    <tr>
+      <td align="right" nowrap="true" colspan="10">{include file="page.htm"}</td>
+    </tr>
+  </table>
+
+{if $full_page}
+</div>
+</form>
+<!-- end article list -->
+
+<script type="text/javascript" language="JavaScript">
+<!--
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+
+  {literal}
+  onload = function()
+  {
+      document.forms['searchForm'].elements['keyword'].focus();
+      // 开始检查订单
+      startCheckOrder();
+  }
+
+  /**
+   * 搜索文章
+   */
+  function searchCut()
+  {
+    var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+    listTable.filter.keywords = keyword;
+    listTable.filter.page = 1;
+    listTable.loadList();
+  }
+  {/literal}
+//-->
+</script>
+{include file="pagefooter.htm"}
+{/if}

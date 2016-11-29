@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$page_title} 触屏版</title>
+<link href="{$ectouch_themes}/ectouch.css" rel="stylesheet" type="text/css" />
+<script src="//cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head> 
+<body>
+<div id="tbh5v0">
+  <div class="login"> 
+    <div class="fullscreen"> 
+      <!-- {if $action eq "account_detail"} -->
+         <div style="z-index:999;background-color:#ec5151;position:relative;  height:3rem;display: block;">
+			<a href="user.php" class="glyphicon glyphicon-menu-left" style="vertical-align:middle;color: #FFFFFF;position: absolute;font-size: 25px;"></a>
+	     <h4 style="text-align:center ;position: absolute;top: 0; left: 0; bottom: 0; right: 0;color: #FFFFFF;"> {$lang.account_detail} </h4>
+	 </div>
+      <table class="table">
+        <thead>
+        <tr>
+          <td>{$lang.process_time}</td>
+          <td>{$lang.surplus_pro_type}</td>
+          <td>{$lang.money}</td>
+          <td>{$lang.change_desc}</td>
+        </tr>
+       	</thead>
+        <!--{foreach from=$account_log item=item}-->
+        <tr>
+          <td>{$item.change_time}</td>
+          <td>{$item.type}</td>
+          <td>{$item.amount}</td>
+          <td>{$item.short_change_desc}</td>
+        </tr>
+        <!--{/foreach}-->
+        <tr>
+          <td colspan="4" class="panel-footer"><div align="right">{$lang.current_surplus}{$surplus_amount}</div></td>
+        </tr>
+      </table>
+      <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --> 
+      <!-- {/if} --> 
+      <!-- {if $action eq "account_log"} -->
+     <div style="z-index:999;background-color:#ec5151;position:relative;  height:3rem;display: block;">
+			<a href="user.php" class="glyphicon glyphicon-menu-left" style="vertical-align:middle;color: #FFFFFF;position: absolute;font-size: 25px;"></a>
+	     <h4 style="text-align:center ;position: absolute;top: 0; left: 0; bottom: 0; right: 0;color: #FFFFFF;"> {$lang.account_log} </h4>
+	 </div>
+      <table class="table">
+      	<thead class="panel-title">
+        <tr>
+          <td>{$lang.process_time}</td>
+          <td>{$lang.surplus_pro_type}</td>
+          <td>{$lang.money}</td>
+          <td>{$lang.is_paid}</td>
+          <td>{$lang.handle}</td>
+        </tr>
+        </thead>
+        <!--{foreach from=$account_log item=item}-->
+        <tr>
+          <td>{$item.add_time}</td>
+          <td>{$item.type}</td>
+          <td>{$item.amount}</td>
+          <td>{$item.pay_status}</td>
+          <td>{$item.handle} 
+            <!-- {if ($item.is_paid eq 0 && $item.process_type eq 1) || $item.handle} --> 
+            <a href="user.php?act=cancel&id={$item.id}" onclick="if (!confirm('{$lang.confirm_remove_account}')) return false;">{$lang.is_cancel}</a> 
+            <!-- {/if} --></td>
+        </tr>
+        <!--{/foreach}-->
+        <tr>
+          <td colspan="6" class="panel-footer"><div align="right">{$lang.current_surplus}{$surplus_amount}</div></td>
+        </tr>
+      </table>
+      <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --> </div>
+    <!-- {/if} -->    
+       <!-- {if $action eq "account_deposit"} -->
+        <div style="z-index:999;background-color:#ec5151;position:relative;  height:3rem;display: block;">
+			<a href="user.php" class="glyphicon glyphicon-menu-left" style="vertical-align:middle;color: #FFFFFF;position: absolute;font-size: 25px;"></a>
+	     <h4 style="text-align:center ;position: absolute;top: 0; left: 0; bottom: 0; right: 0;color: #FFFFFF;"> {$lang.account_deposit} </h4>
+		 </div>
+      <form name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()">
+		    <div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">{$lang.deposit_money}</span>
+				  <input type="text" class="form-control"  name="amount" placeholder="填写金额" aria-describedby="basic-addon1">
+				</div>
+		<div class="input-group input-group-lg">
+			<span class="input-group-addon" id="basic-addon1">{$lang.process_notic}</span>
+		  	<input type="text" class="form-control"  name="user_note" placeholder="填写备注内容" aria-describedby="basic-addon1">
+		</div>
+		<div class="input-group input-group-lg">
+			<span class="input-group-addon" id="basic-addon1">{$lang.payment}</span>
+			<select class="form-control" name="payment_id">
+			  <!-- {foreach from=$payment item=list} -->
+			  <option value="{$list.pay_id}">{$list.pay_name}</option>
+			 <!-- {/foreach} -->
+			</select>
+		</div><br/>
+              <input type="hidden" name="rec_id" value="{$order.id}" />
+              <input type="hidden" name="act" value="act_account" />
+              <input type="submit" style="margin-left: 20px;" class="btn btn-success"  name="submit" value="{$lang.submit_request}" />
+              <div style="float: right;margin-right: 20px;"><input type="reset" class="btn btn-warning" name="reset" value="{$lang.button_reset}" /></div>
+    </form></br>
+      <!-- {/if} -->
+      
+    <!-- {if $action eq "account_raply"} -->
+   		 <div style="z-index:999;background-color:#ec5151;position:relative;  height:3rem;display: block;">
+					<a href="user.php" class="glyphicon glyphicon-menu-left" style="vertical-align:middle;color: #FFFFFF;position: absolute;font-size: 25px;"></a>
+			     <h4 style="text-align:center ;position: absolute;top: 0; left: 0; bottom: 0; right: 0;color: #FFFFFF;"> {$lang.account_raply}  </h4>
+			 </div>
+	  <form name="formSurplus" method="post" action="distribute.php" onSubmit="return submitSurplus()">
+	  		<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">{$lang.account_num}</span>
+				  <input type="text" class="form-control"   placeholder="{$sur_amount}" aria-describedby="basic-addon1" readonly>
+				</div>
+				<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">{$lang.limit_account_replay}</span>
+				  <input type="text" class="form-control"   placeholder="{$limit_account_replay}" aria-describedby="basic-addon1" readonly>
+				</div>
+        <div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">{$lang.account_raply_num}</span>
+				  <input type="text" class="form-control"  name="amount" placeholder="{$lang.account_raply_num_lang}" aria-describedby="basic-addon1">
+				</div>
+	      <div class="input-group input-group-lg">
+				<span class="input-group-addon" id="basic-addon1">{$lang.payment}</span>
+				<select class="form-control" name="payment_id" id="tixian_type">
+				  <option value="2">微信红包</option>
+				  <option value="1">银行卡</option>
+				  <option value="3">支付宝</option>
+				</select>
+				</div>
+				<span id="weixin" style="display:block;">
+        	<div class="input-group input-group-lg">
+					  <span class="input-group-addon" id="basic-addon1">微信号码</span>
+					  <input type="text" class="form-control"  name="wx_num" placeholder="请输入微信号" aria-describedby="basic-addon1">
+					</div>
+        </span>
+        <span id="yinhang" style="display:none;">
+        	<div class="input-group input-group-lg">
+					  <span class="input-group-addon" id="basic-addon1">真实姓名</span>
+					  <input type="text" class="form-control"  name="real_name" placeholder="请输入真实姓名【开户名】" aria-describedby="basic-addon1">
+					</div>
+        	<div class="input-group input-group-lg">
+					  <span class="input-group-addon" id="basic-addon1">开户银行</span>
+					  <input type="text" class="form-control"  name="bank_name" placeholder="请输入开户银行名字" aria-describedby="basic-addon1">
+					</div>
+        	<div class="input-group input-group-lg">
+					  <span class="input-group-addon" id="basic-addon1">银行账户</span>
+					  <input type="text" class="form-control"  name="bank_account" placeholder="请输入银行账户【卡号】" aria-describedby="basic-addon1">
+					</div>
+        	<div class="input-group input-group-lg">
+					  <span class="input-group-addon" id="basic-addon1">手机号码</span>
+					  <input type="text" class="form-control"  name="mobile_phone" placeholder="请输入手机号码" aria-describedby="basic-addon1">
+					</div>
+				</span>
+        <span id="zhifubao" style="display:none;">
+        	<div class="input-group input-group-lg">
+					  <span class="input-group-addon" id="basic-addon1">支付宝号</span>
+					  <input type="text" class="form-control"  name="zhifubao_num" placeholder="请输入支付宝账户" aria-describedby="basic-addon1">
+					</div>
+        	<div class="input-group input-group-lg">
+					  <span class="input-group-addon" id="basic-addon1">开户姓名</span>
+					  <input type="text" class="form-control"  name="zhifubao_name" placeholder="请输入支付宝开户真实姓名" aria-describedby="basic-addon1">
+					</div>
+        </span>
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon" id="basic-addon1">{$lang.process_notic}</span>
+				  <input type="text" class="form-control"  name="user_note" placeholder="填写备注内容" aria-describedby="basic-addon1">
+				</div><br>
+            <script>
+            $("#tixian_type").change(
+            function ()
+            {
+                var type_val= $("#tixian_type").val();
+                if(type_val==1)
+                {
+                   $("#yinhang").css('display','block');
+                   $("#weixin").css('display','none');
+                   $("#zhifubao").css('display','none'); 
+                   $("#tixian_fangshi").val("1");   
+                }
+                else if(type_val==2)
+                {
+                   $("#yinhang").css('display','none');
+                   $("#weixin").css('display','block');
+                   $("#zhifubao").css('display','none'); 
+                   $("#tixian_fangshi").val("2"); 
+                }
+                else if(type_val==3)
+                {
+                   $("#yinhang").css('display','none');
+                   $("#weixin").css('display','none');
+                   $("#zhifubao").css('display','block');  
+                   $("#tixian_fangshi").val("3");
+                }
+            })
+            </script>
+              <input type="hidden" name="act" value="act_account">
+              <input type="hidden" id ="tixian_fangshi"  name="tixian_fangshi" value="">
+              <input type="hidden" name="surplus_type" value="1">
+              <input type="submit" style="margin-left: 20px;" class="btn btn-success"  name="submit" value="{$lang.submit_request}" />
+              <div style="float: right;margin-right: 20px;"><input type="reset" class="btn btn-warning" name="reset" value="{$lang.button_reset}" /></div>
+    </form></br>
+      <!-- {/if} --> 
+            <!--#甜    心100设置提现密码 start--> 
+      <!-- {if $action eq "account_raply_psw"} -->
+      <div style="z-index:999;background-color:#ec5151;position:relative;  height:3rem;display: block;">
+					<a href="user.php" class="glyphicon glyphicon-menu-left" style="vertical-align:middle;color: #FFFFFF;position: absolute;font-size: 25px;"></a>
+			     <h4 style="text-align:center ;position: absolute;top: 0; left: 0; bottom: 0; right: 0;color: #FFFFFF;"> {$lang.password_set} </h4>
+			 </div>
+			 <form  action="distribute.php" method="post">
+		 	<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">{$lang.password_first}</span>
+				  <input type="password" class="form-control"  name="password_account_replay1" placeholder="{$lang.password}" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">{$lang.password_second}</span>
+				  <input type="password" class="form-control"  name="password_account_replay2" placeholder="{$lang.password_second_lang}" aria-describedby="basic-addon1">
+			</div>
+
+		  <input name="act" type="hidden" value="account_raply" /><br/>
+		  <div style="text-align: center;"><input name="bind" type="submit" value="保存" class="btn btn-primary btn-lg active" style="border:none; width:30%;background-color:#EC5151;" /></div>
+			 </form><br/><br/>
+      <!-- {/if} --> 
+      <!--#甜    心100设置提现密码 end--> 
+      
+      <!--#甜    心 100 验证提现密码 start--> 
+      <!-- {if $action eq "account_raply_checkpsw"} -->
+      <div style="z-index:999;background-color:#ec5151;position:relative;  height:3rem;display: block;">
+					<a href="user.php" class="glyphicon glyphicon-menu-left" style="vertical-align:middle;color: #FFFFFF;position: absolute;font-size: 25px;"></a>
+			     <h4 style="text-align:center ;position: absolute;top: 0; left: 0; bottom: 0; right: 0;color: #FFFFFF;"> {$lang.account_raply_num_check} </h4>
+			 </div>
+			 <form  action="distribute.php" method="post">
+			 <div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="basic-addon1">{$lang.account_raply_num_pass}</span>
+				  <input type="password" class="form-control"  name="password_account_replay" placeholder="{$lang.password}" aria-describedby="basic-addon1">
+			 </div><br/>
+			 		    <input name="act" type="hidden" value="account_raply" />
+		       		<div style="text-align: center;"><input name="bind2" type="submit" value="确定" class="btn btn-primary btn-lg active" style="border:none; width:30%;background-color:#EC5151;" /></div>
+			 </form><br/><br/>
+      <!-- {/if} --> 
+      <!--#甜    心100 验证提现密码 end--> 
+      <div class="btn-group  btn-group-xs btn-group-justified" role="group" >
+		  <div class="btn-group btn-group-xs" role="group"><button type="button" class="btn btn-default" onclick="window.location.href='user.php?act=account_deposit'">{$lang.surplus_type_0}</button></div>
+		  <div class="btn-group btn-group-xs" role="group"><button type="button" class="btn btn-default" onclick="window.location.href='distribute.php?act=account_raply'">{$lang.surplus_type_1}</button></div>
+		  <div class="btn-group btn-group-xs" role="group"><button type="button" class="btn btn-default"onclick="window.location.href='user.php?act=account_detail'">{$lang.add_surplus_log}</button></div>
+		  <div class="btn-group btn-group-xs" role="group"><button type="button" class="btn btn-default"onclick="window.location.href='user.php?act=account_log'">{$lang.view_application}</button></div>
+			</div>
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> </div>
+</div>
+<div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>

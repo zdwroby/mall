@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$page_title} 触屏版</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="{$ectouch_themes}/ectouch.css" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='transport.js,common.js,user.js'}
+<script type="text/javascript" src="{$ectouch_themes}/js/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+<div id="tbh5v0">
+  <div class="login"> 
+	 <!-- 修改店铺名字 start--> 
+    <!--{if $action eq 'dianpu'}--> 
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="distribute.php"> 返回 </a> </div>
+      <h1> 修改我的店铺名称</h1>
+    </header>
+    <div class="blank3"></div>
+    <section class="wrap">
+      <form name="formEdit" action="user.php" method="post" onSubmit="return userEdit()">
+        <section class="order_box padd1 radius10" style="padding-top:0;padding-bottom:0;">
+          <div class="table_box table_box2">
+            <dl>
+              <dd class="dd1">微店名称 </dd>
+              <input name="nicheng" type="text" placeholder="请给你的微店取个名字"  value="{$dianpu}" class="dd2" />
+            </dl>
+
+			</div>
+        </section>
+        <div class="blank3"></div>
+		<input type="hidden" name="act" value="act_dianpu" />
+        <input type="hidden" name="back_act" value="{$back_act}" />
+        <input name="submit" type="submit" value="{$lang.confirm_edit}" class="c-btn3"   />
+      </form>
+    </section>
+    <!--{/if}--> 
+    <!--#修改店铺名字结束 end--> 
+	
+		 <!-- 修改店铺名字 start--> 
+    <!--{if $action eq 'act_dianpu'}--> 
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="distribute.php"> 返回 </a> </div>
+      <h1> 修改我的店铺名称</h1>
+    </header>
+    <div class="blank3"></div>
+    <section class="wrap">
+        <section class="order_box padd1 radius10" style="padding-top:0;padding-bottom:0;text-align:center;">修改成功 </section>
+        <div class="blank3"></div>
+		<input type="hidden" name="act" value="act_dianpu" />
+        <input type="hidden" name="back_act" value="{$back_act}" />
+        <a href="user.php"><input  type="button" value="返回个人中心" class="c-btn3"   /></a>
+    </section>
+    <!--{/if}--> 
+    <!--#修改店铺名字结束 end--> 
+	
+	
+	
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> </div>
+</div>
+<div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>

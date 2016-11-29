@@ -1,0 +1,87 @@
+<!-- $Id: pintuan_view.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../data/static/js/utils.js,./js/listtable.js"}
+
+
+<form method="post" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+
+<table cellpadding="3" cellspacing="1">
+    <tr>
+      <th>团长ID</th>
+      <th>团长昵称</th>
+      <th>开团时间</th>
+      <th>结束时间</th>
+      <th>所需人数</th>
+      <th>还需人数</th>
+      <th>状态</th>
+    </tr>
+    <tr>
+      <td align="center">{$pintuan_info.user_id}</td>
+      <td align="center">{$pintuan_info.user_nickname}</td>
+      <td align="center">{$pintuan_info.create_time}</td>
+      <td align="center">{$pintuan_info.end_time}</td>
+      <td align="center">{$pintuan_info.need_people}</td>
+      <td align="center">{$pintuan_info.available_people}</td>
+      <td align="center">{if $pintuan_info.status eq 1}拼团成功{elseif $pintuan_info.status eq 2}
+                          <font  color="#FF0000">拼团失败</font>{else}进行中{/if}</td>
+
+    </tr>
+</table>
+
+<table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('follow_user');">参与用户ID</a>{$sort_follow_user}</th>
+      <th><a href="javascript:listTable.sort('follow_user_nickname');">参与用户昵称</a>{$sort_follow_user_nickname}</th>
+      <th>头像</th>
+      <th><a href="javascript:listTable.sort('follow_time');">参与时间</a>{$sort_follow_time}</th>
+      <th><a href="javascript:listTable.sort('order_id');">订单编号</a>{$sort_order_id}</th>
+      <th><a href="javascript:listTable.sort('order_id');">订单状态</a>{$sort_order_id}</th>
+      <th>{$lang.handler}</th>
+
+    </tr>
+    {foreach from=$pintuan_list item=pintuan}
+    <tr>
+      <td align="center">{$pintuan.follow_user}</td>
+      <td align="center">{$pintuan.follow_user_nickname}</td>
+      <td align="center"><img src="{$pintuan.follow_user_head}" style="width:40px; height:auto;" ></td>
+      <td align="center">{$pintuan.follow_time}</td>
+      <td align="center"><a href="order.php?act=info&amp;order_id={$pintuan.order_id}" title="订单详情" target="_blank">{$pintuan.order_id}</a></td>
+      <td align="center" >{$lang.os[$pintuan.order_status]},{$lang.ps[$pintuan.pay_status]},{$lang.ss[$pintuan.shipping_status]}</td>
+      <td align="center">
+        <a href="order.php?act=info&amp;order_id={$pintuan.order_id}" title="订单详情" target="_blank"><img src="images/icon_view.gif" border="0" height="16" width="16"></a>
+      </td>
+    </tr>
+    {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+    {/foreach}
+    <tr>
+      <td align="right" nowrap="true" colspan="8">{include file="page.htm"}</td>
+    </tr>
+</table>
+
+{if $full_page}
+</div>
+</form>
+
+<script type="text/javascript" language="JavaScript">
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+  listTable.query = "query_pintuan_detail";
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+
+  {literal}
+  onload = function()
+  {
+    startCheckOrder();  // 开始检查订单
+  }
+  {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{if $name}{$name}的{/if}{$shop_name} 触屏版</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+
+        <link href="css/css.css" rel="stylesheet" type="text/css" />
+        <link href="css/lh.css" rel="stylesheet" type="text/css">
+        <link href="css/footer.css" rel="stylesheet" type="text/css">
+<link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="{$ectouch_themes}/ectouch.css?v=2014" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$ectouch_themes}/js/TouchSlide.js"></script>
+<!--甜心新增---> 
+<style>
+.user_top_goods {
+height: 5rem;
+overflow: hidden; 
+background:#ffbf6b;
+position:relative
+
+}
+.user_top_goods dt {
+float: left;
+margin: 0.8rem 0.8rem 0;
+text-align: center;
+position: relative;
+width: 3.7rem;
+height: 3.7rem;
+border-radius: 3.7rem;
+padding:0.15rem; background:#FFFFFF
+}
+.user_top_goods dt img {
+width: 3.7rem;
+height:3.7rem;
+border-radius: 3.7rem;
+}
+.guanzhu {
+background-color: #ffbf6b;
+}
+
+.guanzhu {
+color: #fff;
+border: 0;
+height: 2.5rem;
+line-height: 2.5rem;
+width: 100%;
+-webkit-box-flex: 1;
+display: block;
+-webkit-user-select: none;
+font-size: 0.9rem;
+}
+#cover2 {
+    background-color: #333333;
+    display: none;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+#share_weixin, #share_qq {
+    right: 10px;
+    top: 2px;
+    width: 260px;
+}
+#share_weixin, #share_qq, #share_qr {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+}
+#share_weixin img, #share_qq img {
+    height: 165px;
+    width: 260px;
+}
+
+		.button_3 {
+    background-color: #EEEEEE;
+    border: 1px solid #666666;
+    color: #666666;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+#share_weixin button, #share_qq button {
+    margin-top: 25px;
+    width: 100%;
+}
+</style>
+<!--甜心新增  ---> 
+</head>
+<body>
+<!--头部s-->
+<div id="page">
+  <header id="header" >
+    <div class="header_l"> <a class="ico_02" href="#menu"> 菜单栏 </a> </div>
+		<h1> {if $name}{$name}的{/if}{$shop_name} </h1>
+	<div class="header_r"> <a class="ico_01" href="flow.php"> 购物车 </a> </div>
+  </header>
+</div>
+
+<!--头部e--> 
+<!--播放器广告s-->
+<div id="focus" class="focus region">
+  <div class="hd">
+    <ul>
+    </ul>
+  </div>
+  <div class="bd">
+    <!-- TemplateBeginEditable name="touch首页广告区域" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+  </div>
+</div>
+<script type="text/javascript">
+TouchSlide({ 
+	slideCell:"#focus",
+	titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+	mainCell:".bd ul", 
+	effect:"leftLoop", 
+	autoPlay:true,//自动播放
+	autoPage:true //自动分页
+});
+</script>
+<!--播放器广告e-->
+<!--播放器广告e-->
+<!--content s-->
+<div id=content class="wrap">
+
+
+<div class="msgz">
+	<div class="msgz_left"><span>{if  $url}分享商品页面可以获取提成哦{else}购买商品并且登陆后可以分享页面获取提成哦{/if}</div>
+	<div class="msgz_right">
+		<!--{if $userid  }-->
+		<a href="user.php" class="anniu">会员中心</a>
+		<!-- {else} -->
+		 <a href="{$tianxin_url}" class="anniu">马上关注</a>
+		<!-- {/if} -->
+	</div>
+</div>
+
+
+  <!--快速连接s-->
+  <div>
+    <ul class="fenlei">
+    
+	  <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+      <li class="flex_in"> <a href="{$nav.url}"{if $nav.opennew eq 1} target="_blank"{/if} title="{$nav.name}"> <img src="{$nav.pic}" /> </a>
+        <p> {$nav.name} </p>
+      </li>
+      <!-- {if $smarty.foreach.nav_middle_list.iteration % 4 eq 0 and $smarty.foreach.nav_middle_list.iteration neq $smarty.foreach.nav_middle_list.total} 菜单取模 -->
+      </ul><ul class="fenlei">
+      <!-- {/if} -->
+      <!-- {/foreach} -->
+    </ul>
+  </div>
+  <!--快速连接e-->
+  
+  
+  
+  
+<!-- TemplateBeginEditable name="中部主区域" -->
+<!-- #BeginLibraryItem "/library/recommend_new.lbi" -->
+
+<!-- {if $new_goods} -->
+<div class="blank2"></div>
+
+<div class="rmtj">
+<a href="search.php?intro=new"><div class="rmtj_left">新品上架</div></a>
+<a href="search.php?intro=new"><div class="rmtj_right"></div></a>
+</div>
+<ul class="chanpin">
+<!--{foreach from=$new_goods item=goods name=new_goods}-->
+	<li>
+		<div class="chanpin_mb">
+		<a href="{$goods.url}"><img src="{$site_url}{$goods.thumb}" /></a>
+		<!-- {if $goods.promote_price neq ""} --> 
+		<P><em class="red">{$goods.promote_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!-- {else}--> 
+		<P><em class="red">{$goods.shop_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!--{/if}-->
+		
+		<p>{$goods.name|escape:html|truncate:12}</p>
+		</div>
+	</li>
+ <!--{/foreach}-->
+</ul>
+
+<!-- {/if} -->
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
+
+<!-- {if $hot_goods} -->
+<div class="blank2"></div>
+<div class="rmtj">
+<a href="search.php?intro=hot"><div class="rmtj_left">热卖商品</div></a>
+<a href="search.php?intro=hot"><div class="rmtj_right"></div></a>
+</div>
+<ul class="chanpin">
+<!--{foreach from=$hot_goods item=goods name=hot_goods}-->
+	<li>
+		<div class="chanpin_mb">
+		<a href="{$goods.url}"><img src="{$site_url}{$goods.thumb}" /></a>
+		<!-- {if $goods.promote_price neq ""} --> 
+		<P><em class="red">{$goods.promote_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!-- {else}--> 
+		<P><em class="red">{$goods.shop_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!--{/if}-->
+		
+		<p>{$goods.name|escape:html|truncate:12}</p>
+		</div>
+	</li>
+ <!--{/foreach}-->
+</ul>
+<!-- {/if} -->
+
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
+
+
+<!-- {if $best_goods} -->
+<div class="blank2"></div>
+<div class="rmtj">
+<a href="search.php?intro=hot"><div class="rmtj_left">精品推荐</div></a>
+<a href="search.php?intro=hot"><div class="rmtj_right"></div></a>
+</div>
+<ul class="chanpin">
+<!--{foreach from=$best_goods item=goods name=best_goods}-->
+	<li>
+		<div class="chanpin_mb">
+		<a href="{$goods.url}"><img src="{$site_url}{$goods.thumb}" /></a>
+		<!-- {if $goods.promote_price neq ""} --> 
+		<P><em class="red">{$goods.promote_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!-- {else}--> 
+		<P><em class="red">{$goods.shop_price}</em>
+		<em class="xiexian">市场价：{$goods.market_price} </em></P>
+		<!--{/if}-->
+		
+		<p>{$goods.name|escape:html|truncate:12}</p>
+		</div>
+	</li>
+ <!--{/foreach}-->
+</ul>
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+</div>
+<!--content e--> 
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<nav id="menu" style="display:None">
+  <ul>
+    <!--{foreach from=$categories item=cat}-->
+    <li> <a href="{$cat.url}"> {$cat.name|escape:html} </a>
+      <ul>
+        <!--{foreach from=$cat.cat_id item=child}-->
+        <li> <a href="{$child.url}"> {$child.name|escape:html} </a>
+          <ul>
+            <!--{foreach from=$child.cat_id item=childer}-->
+            <li> <a href="{$childer.url}"> {$childer.name|escape:html} </a> </li>
+            <!--{/foreach}-->
+          </ul>
+        </li>
+        <!--{/foreach}-->
+      </ul>
+    </li>
+    <!--{/foreach}-->
+  </ul>
+</nav>
+
+<!--浮动-->
+<div class="zzsc">
+ <!-- QQ 号码 {foreach from=$qq item=im} -->
+	<!-- {if $im} -->
+	<a href="http://wpa.qq.com/msgrd?v=3&uin={$im}&site=qq&menu=yes" class="lanren1"><img src="images/1.jpg"></a>
+	<!-- {/if} -->
+   <!-- {/foreach} 结束QQ号码 -->
+	<a href="{$tianxin_url}" class="lanren1"><img src="images/2.jpg"></a>
+<!--浮动结束-->
+</div>
+<script type="text/javascript" src="{$ectouch_themes}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{$ectouch_themes}/js/jquery.mmenu.js"></script>
+<script type="text/javascript" src="{$ectouch_themes}/js/ectouch.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+  $('#menu').css('display','');
+}
+$(function() {
+	$('nav#menu').mmenu();
+	$('#get_search_box').click(function(){
+		$(".mm-page").children('div').hide();
+		$("#main-search").css('position','fixed').css('top','0px').css('width','100%').css('z-index','999').show();
+		//$('#keywordBox').focus();
+	})
+	$("#main-search .close").click(function(){
+		$(".mm-page").children('div').show();
+		$("#main-search").hide();
+	})
+});
+</script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+<!-- {/literal} -->
+  wx.config({
+    debug: false,
+    appId: '{$signPackage.appId}',
+    timestamp: {$signPackage.timestamp},
+    nonceStr: '{$signPackage.nonceStr}',
+    signature: '{$signPackage.signature}',
+    jsApiList: [
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage' 
+    ]
+  });
+ wx.ready(function () {
+	//甜心100监听“分享给朋友”
+    wx.onMenuShareAppMessage({
+      title: '{$page_title}',
+      desc: '{$page_title}',
+      link: '{$url}',
+      imgUrl: '{$w_picurl}',
+      trigger: function (res) {
+		
+		{if $url}
+        alert('恭喜！分享可以获取提成哦！');
+		{else}
+		alert('糟糕，需要分销商登录才能获得提成哦！');
+		{/if}
+		
+      },
+      success: function (res) {
+		{if $dourl }
+        window.location.href="{$dourl}&type=1"; 
+		{/if}
+      },
+      cancel: function (res) {
+        alert('很遗憾，您已取消分享');
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+
+	//分享到朋友圈甜心100
+    wx.onMenuShareTimeline({
+      title: '{$page_title}',
+      link: '{$url}',
+      imgUrl: '{$w_picurl}',
+      trigger: function (res) {
+			
+        {if $url}
+			alert('恭喜！分享可以获取提成哦！');
+		{else}
+			alert('糟糕，需要分销商登录才能获得提成哦！');
+		{/if}
+      },
+      success: function (res) {
+       	{if $dourl }
+        window.location.href="{$dourl}&type=2"; 
+		{/if}
+      },
+      cancel: function (res) {
+         alert('很遗憾，您已取消分享');
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+
+
+});
+<!-- {literal} -->
+</script>
+
+</body>
+</html>

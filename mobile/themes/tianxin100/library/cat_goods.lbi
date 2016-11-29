@@ -1,0 +1,26 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--循环分类下商品 begin-->
+
+<div class="rmtj">
+<div class="rmtj_left">{$goods_cat.name|escape:html}</div>
+<a href="{$goods_cat.url}"><div class="rmtj_right"></div></a>
+</div>
+<ul class="chanpin">
+<!--{foreach from=$cat_goods item=goods name=goods}-->
+	<li>
+		<div class="chanpin_mb">
+			<a href="{$goods.url}"><img src="{$site_url}{$goods.thumb}" /></a>
+			<!-- {if $goods.promote_price neq ""} --> 
+			<P><em class="red">{$goods.promote_price}</em>
+			<em class="xiexian">市场价：{$goods.market_price} </em></P>
+			<!-- {else}--> 
+			<P><em class="red">{$goods.shop_price}</em>
+			<em class="xiexian">市场价：{$goods.market_price} </em></P>
+			<!--{/if}-->
+			<p>{$goods.short_name|escape:html}</p>
+		</div>
+	</li>
+	<!--{/foreach}-->
+</ul>
+
+<!--循环分类下商品end-->

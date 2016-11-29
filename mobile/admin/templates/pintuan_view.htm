@@ -1,0 +1,67 @@
+<!-- $Id: pintuan_view.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../data/static/js/utils.js,./js/listtable.js"}
+
+
+<form method="post" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+
+<table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('user_id');">团长ID</a>{$sort_user_id}</th>
+      <th><a href="javascript:listTable.sort('user_nickname');">团长昵称</a>{$sort_user_nickname}</th>
+      <th><a href="javascript:listTable.sort('create_time');">开团时间</a>{$sort_create_time}</th>
+      <th><a href="javascript:listTable.sort('end_time');">结束时间</a>{$sort_end_time}</th>
+      <th><a href="javascript:listTable.sort('need_people');">所需人数</a>{$sort_need_people}</th>
+      <th><a href="javascript:listTable.sort('available_people');">还需人数</a>{$sort_available_people}</th>
+      <th><a href="javascript:listTable.sort('status');">状态</a>{$sort_status}</th>
+      <th>{$lang.handler}</th>
+
+    </tr>
+    {foreach from=$pintuan_list item=pintuan}
+    <tr>
+      <td align="center">{$pintuan.user_id}</td>
+      <td align="center">{$pintuan.user_nickname}</td>
+      <td align="center">{$pintuan.create_time}</td>
+      <td align="center">{$pintuan.end_time}</td>
+      <td align="center">{$pintuan.need_people}</td>
+      <td align="center">{$pintuan.available_people}</td>
+      <td align="center">{if $pintuan.status eq 1}拼团成功{elseif $pintuan.status eq 2}
+                          <font  color="#FF0000">拼团失败</font>{else}进行中{/if}</td>
+      <td align="center">
+        <a href="pintuan.php?act=detail_view&amp;pt_id={$pintuan.pt_id}&amp;act_id={$pintuan.act_id}" title="{$lang.view_detail}"><img src="images/icon_view.gif" border="0" height="16" width="16"></a>
+      </td>
+    </tr>
+    {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+    {/foreach}
+    <tr>
+      <td align="right" nowrap="true" colspan="8">{include file="page.htm"}</td>
+    </tr>
+</table>
+
+{if $full_page}
+</div>
+</form>
+
+<script type="text/javascript" language="JavaScript">
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+  listTable.query = "query_pintuan";
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+
+  {literal}
+  onload = function()
+  {
+    startCheckOrder();  // 开始检查订单
+  }
+  {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}

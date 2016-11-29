@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$page_title} 触屏版</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" name="viewport">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+    	<title>分销中心</title>
+		
+<link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="{$ectouch_themes}/ectouch.css?id=1212" rel="stylesheet" type="text/css" />
+        <link href="css/css.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="{$ectouch_themes}/js/jquery-1.7.2.min.js" ></script>
+		<script>
+        	$(function(){
+        		$('.tab_per').click(function(){
+        			$(this).next('ul').slideToggle()
+        		})
+        	})
+        </script>
+<body>
+<!-- *用户中心默认显示页面 start--> 
+<!-- {if $action eq 'default'} -->
+<div class="wrap">
+	<div class="header">
+		<div class="header_cen">分销中心</div>
+	</div>
+	
+	<div class="my_photo">
+		<img src="images/top_bj.jpg" class="top_bj"/>
+		{if $info.avatar neq ''}<img src="{$info.avatar}" class="my_img"/>{else}<img src="images/photo.png" class="my_img"/>{/if}
+		<p>{$info.username}</p>
+		<p>资格：{$tianxin}</p>
+		<p>上级：{if $info.pusername}{$info.pusername}{else}官网{/if}</p>
+	</div>
+	<div class="xs_price">
+		<span><em><i class="price">￥{if $tianxin100all.order_amount}{$tianxin100all.order_amount}{else}0{/if}</i><i>累计销售</i></em></span>
+		<span><i class="price">￥{if $tianxin100all.setmoney}{$tianxin100all.setmoney}{else}0{/if}</i><i>累计佣金</i></span>
+	</div>
+	<div class="per_icon_list">
+		<a class="per_list tab_per">
+			<img src="images/my1.png" class="icon"/>
+				<span>分销中心</span>
+				<img src="images/right.png" class="right_img"/>
+		</a>
+		<ul style="display: none;">
+			<li><a href='index.php?u={$user_id}'>我的店铺</a></li>
+			<li><a href='user.php?act=dianpu'>修改店铺名</a></li>
+			<li><a href='user.php'>会员中心</a></li>
+			<li><a href='user.php?act=tuiguang'>获取推广二维码</a></li>
+		</ul>
+	 </div>	
+	<div class="per_icon_list">
+			<a class="per_list tab_per">
+				<img src="images/my2.png" class="icon"/>
+				<span>我的盟友</span>
+				<img src="images/right.png" class="right_img"/>
+			</a>
+			<ul style="display: none;">{foreach from=$menuarr item=menu}
+				{if $menu==1}<li><a href="distribute.php?act=fenxiao&rank=1">一级会员{$count1}人</a></li>{/if}
+				{if $menu==2}<li><a href="distribute.php?act=fenxiao&rank=2">二级会员{$count2}人</a></li>{/if}
+				{if $menu==3}<li><a href="distribute.php?act=fenxiao&rank=3">三级会员{$count3}人</a></li>{/if}
+				{if $menu==4}<li><a href="distribute.php?act=fenxiao&rank=4">四级会员{$count4}人</a></li>{/if}
+				{if $menu==5}<li><a href="distribute.php?act=fenxiao&rank=5">五级会员{$count5}人</a></li>{/if}
+	{/foreach} 
+			</ul>
+	</div>
+	<div class="per_icon_list">
+			<a class="per_list tab_per">
+				<img src="images/my3.png" class="icon"/>
+				<span>我的佣金</span>
+				<img src="images/right.png" class="right_img"/>
+			</a>
+			<ul  style="display: none;">
+            <li><a>未付款订单佣金￥{if  $tianxin100arr.weifukuan.setmoney}{$tianxin100arr.weifukuan.setmoney}{else}0{/if}</a></li>
+            <li><a>已付款订单佣金￥{if  $tianxin100arr.yifukuan.setmoney}{$tianxin100arr.yifukuan.setmoney}{else}0{/if}</a></li>
+            <li><a>已收货订单佣金￥{if  $tianxin100arr.yishouhuo.setmoney}{$tianxin100arr.yishouhuo.setmoney}{else}0{/if}</a></li>
+			<li><a>可提现余额{$info.surplus}</a></li>
+          </ul>
+	</div>
+	<div class="per_icon_list">
+			<a class="per_list tab_per">
+				<img src="images/my4.png" class="icon"/>
+				<span>个人购买成分</span>
+				<img src="images/right.png" class="right_img"/>
+			</a>
+		    <ul style="display: none;">
+            <li><a>未付款订单佣金￥{if  $tianxinarrPersonal.weifukuan.setmoneyPersonal}{$tianxinarrPersonal.weifukuan.setmoneyPersonal}{else}0{/if}</a></li>
+            <li><a>已付款订单佣金￥{if  $tianxinarrPersonal.yifukuan.setmoneyPersonal}{$tianxinarrPersonal.yifukuan.setmoneyPersonal}{else}0{/if}</a></li>
+            <li><a>已收货订单佣金￥{if  $tianxinarrPersonal.yishouhuo.setmoneyPersonal}{$tianxinarrPersonal.yishouhuo.setmoneyPersonal}{else}0{/if}</a></li>	
+          </ul>
+	</div>
+	<div class="per_icon_list">
+			<a class="per_list" href="distribute.php?act=account_raply">
+				<img src="images/my5.png" class="icon"/>
+				<span>申请提现</span>
+				<img src="images/right.png" class="right_img"/>
+			</a>
+			<a class="per_list" href="distribute.php?act=userrank">
+				<img src="images/my6.png" class="icon"/>
+				<span>会员消费排行</span>
+				<img src="images/right.png" class="right_img"/>
+			</a>
+	</div>
+</div>
+
+<!-- {/if} --> 
+
+<!-- /一级分销 S--> 
+<!-- {if $action eq 'fenxiao'} --> 
+<header id="header">
+  <div class="header_l header_return"> <a class="ico_10" href="distribute.php"> 返回 </a> </div>
+  <h1> 我的分销{$rank}级会员</h1>
+</header>
+<!--详细下线记录by  tianxin100-->
+<section class="class="wrap"">
+<div class="content">
+  {foreach from=$user_list item=user}
+   
+    	<a href="distribute.php?act=myorder&user_id={$user.user_id}&level={$user.level}">
+        	<dl>
+            	<dt>{if $user.head_url neq ''}<img src="{$user.head_url}"  border="0">{else}<img src="{$ectouch_themes}/images/get_avatar.png"  border="0">{/if}</dt>
+                <div>
+                  <h3>&nbsp;会&nbsp;员&nbsp;名：{if  $user.nickname}{$user.nickname}{else}{$user.user_name}{/if}</h3>
+                  <h3>订单数量：{$user.order_num}</h3>
+                  <h3>提成金额：{$user.order_amount}</h3>
+                <p>
+    </p></div>
+            </dl>
+        </a>
+	{foreachelse}
+  <div class="no-records" colspan="10" align="center">{$lang.no_records}</div>
+  {/foreach}
+  </div>
+</section>
+<!-- {/if} --> 
+<!-- /一级分销 	E--> 
+
+<!-- /会员排行榜 S--> 
+<!-- {if $action eq 'userrank'} --> 
+<header id="header">
+  <div class="header_l header_return"> <a class="ico_10" href="distribute.php"> 返回 </a> </div>
+  <h1> 会员排行榜</h1>
+</header>
+   <!--详细下线记录by  tianxin100-->
+   <section class="order_box padd1 radius10 single_item">
+   <table border="0" cellspacing="1" style=" width:100%;">
+<tr>
+  <th width="20%">排名</th>
+  <th width="20%">用户名</th>
+  <th width="30%">级别</th>
+  <th width="30%">总消费金额</th>
+</tr>
+{foreach from=$user_list item=user_list key=>key}
+<tr>
+  <th width="20%">{$key}</th>
+  <th width="20%">{$user_list.user_name}</th>
+  <th width="30%">{$user_list.status}</th>
+  <th width="30%">{$user_list.money}</th>
+</tr>
+{/foreach}
+
+</table>
+</section> 
+<!-- {/if} --> 
+<!-- /分销订单E --> 
+
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>

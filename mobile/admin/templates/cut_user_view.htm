@@ -1,0 +1,69 @@
+<!-- $Id: cut_view.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../data/static/js/utils.js,./js/listtable.js"}
+<div class="list-div">
+    <table width="100%" cellpadding="3" cellspacing="1">
+      <tr>
+        <th colspan="8"><strong>{$info.cut_name} </strong></th>
+      </tr>
+      <tr>
+        <td><strong>{$lang.start_time}: </strong></td><td colspan="3">{$info.start_time}</td>
+        <td><strong>{$lang.end_time}: </strong></td><td colspan="3">{$info.end_time}</td>
+      </tr>
+    </table>
+</div>
+
+<form method="post" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+
+<table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('act_user');">发起用户ID</a>{$sort_act_user}</th>
+      <th><a href="javascript:listTable.sort('bid_user');">好友ID</a>{$sort_bid_user}</th>
+      <th><a href="javascript:listTable.sort('bid_user_nickname');">好友昵称</a>{$sort_bid_user_nickname}</th>
+      <th><a href="javascript:listTable.sort('bid_time');">砍价时间</a>{$sort_bid_time}</th>
+      <th><a href="javascript:listTable.sort('bid_price');">砍掉价格</a>{$sort_bid_price}</th>
+      <th><a href="javascript:listTable.sort('after_bid_price');">砍后价格</a>{$sort_after_bid_price}</th>
+    </tr>
+    {foreach from=$bid_list item=bid}
+    <tr>
+      <td align="center">{$bid.act_user}</td>
+      <td align="center">{$bid.bid_user}</td>
+      <td align="center">{$bid.bid_user_nickname}</td>
+      <td align="center">{$bid.bid_time}</td>
+      <td align="center">{$bid.bid_price}</td>
+      <td align="center">{$bid.after_bid_price}</td>
+    </tr>
+    {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+    {/foreach}
+    <tr>
+      <td align="right" nowrap="true" colspan="8">{include file="page.htm"}</td>
+    </tr>
+</table>
+
+{if $full_page}
+</div>
+</form>
+
+<script type="text/javascript" language="JavaScript">
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+  listTable.query = "query_bid";
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+
+  {literal}
+  onload = function()
+  {
+    startCheckOrder();  // 开始检查订单
+  }
+  {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}
