@@ -37,11 +37,17 @@
       <ul>
         <div class="table_box">
           <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
-		  <dl>
+		  			<!--
+	          	作者：zdwroby@sina.com
+	          	时间：2016-11-29
+	          	描述：去掉登录时会员卡、用户名的下拉选项
+		  			<dl>
               <dd>
                <label class="leftlabel"><select name="login_type"><option value="0">用户名</option><option value="3">会员卡</option></select></label>
               </dd>
-            </dl>
+            </dl>	          	
+	          -->
+
             <dl>
               <dd>
                 <input placeholder="{$lang.username}/{$lang.mobile}/{$lang.email}" name="username" type="text"  class="inputBg" id="username" />
