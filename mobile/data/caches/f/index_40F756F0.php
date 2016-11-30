@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:8:{i:0;s:51:"D:/wamp/www/mall/mobile/themes/tianxin100/index.dwt";i:1;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/page_header.lbi";i:2;s:62:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_ad.lbi";i:3;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_icon.lbi";i:4;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/ad_position.lbi";i:5;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_new.lbi";i:6;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_hot.lbi";i:7;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/footer_nav.lbi";}s:7:"expires";i:1480433986;s:8:"maketime";i:1480430386;}<!DOCTYPE html >
+<?php exit;?>a:3:{s:8:"template";a:8:{i:0;s:51:"D:/wamp/www/mall/mobile/themes/tianxin100/index.dwt";i:1;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/page_header.lbi";i:2;s:62:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_ad.lbi";i:3;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/index_icon.lbi";i:4;s:65:"D:/wamp/www/mall/mobile/themes/tianxin100/library/ad_position.lbi";i:5;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_new.lbi";i:6;s:67:"D:/wamp/www/mall/mobile/themes/tianxin100/library/recommend_hot.lbi";i:7;s:64:"D:/wamp/www/mall/mobile/themes/tianxin100/library/footer_nav.lbi";}s:7:"expires";i:1480434461;s:8:"maketime";i:1480430861;}<!DOCTYPE html >
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
@@ -404,9 +404,9 @@ $('#searchtype').val($(this).attr('0'));
   wx.config({
     debug: false,
     appId: 'wxac2407dbc321d222',
-    timestamp: 1480430397,
-    nonceStr: 'IgBA0QiQDkkgNqS8',
-    signature: 'cf41c8964e518a53edad61f7c32dd12b828bb7fc',
+    timestamp: 1480430862,
+    nonceStr: 'WvIfjMhDaogqCjo3',
+    signature: '0fc3e1ad02b8af31a54edd26decf03d9b9f8dc19',
     jsApiList: [
         'onMenuShareTimeline',
         'onMenuShareAppMessage' 
